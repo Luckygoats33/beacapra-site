@@ -4,151 +4,69 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <base href="/beacapra-site/">
-<meta name="description" content="BeaCapra — Research-grade peptides, independently tested, with the only subscribe & save program in the industry. Be the GOAT of you.">
-<title>BeaCapra — Be The GOAT</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<meta name="description" content="BeaCapra — Precision-grade research peptides with the only subscribe & save program in the industry. Independently tested. Be the GOAT.">
+<title>BeaCapra — Peptide Science</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
 
 <style>
   :root {
-    --bg: #faf9f5;
-    --bg-deep: #f0ede6;
-    --bg-surface: #ffffff;
-    --bg-surface-alt: #f5f3ee;
-    --bg-hero: #0d1117;
-    --bg-dark-section: #111318;
-    --bg-dark-surface: #1a1e27;
-    --bg-dark-surface-hover: #222733;
-    --text: #1a1d26;
-    --text-secondary: #555d6e;
-    --text-muted: #8a91a0;
-    --text-on-dark: #e8e5df;
-    --text-on-dark-secondary: #9da5b4;
-    --text-on-dark-muted: #6b7280;
-    --accent: #c69630;
-    --accent-hover: #d4a843;
-    --accent-soft: rgba(198, 150, 48, 0.08);
-    --accent-text: #a07b1a;
-    --border: #e2ded6;
-    --border-subtle: #eceae4;
-    --border-dark: #2a2e38;
-    --success: #2d8659;
-    --success-soft: rgba(45, 134, 89, 0.08);
-    --warning: #c47a1a;
-    --tag-bg: #eceae4;
-    --tag-text: #5a5347;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
-    --shadow-lg: 0 8px 30px rgba(0,0,0,0.08);
-    --radius: 6px;
-    --radius-lg: 10px;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #0d1017;
-      --bg-deep: #080b10;
-      --bg-surface: #151921;
-      --bg-surface-alt: #1a1e27;
-      --bg-hero: #080b10;
-      --bg-dark-section: #0a0d12;
-      --bg-dark-surface: #151921;
-      --bg-dark-surface-hover: #1e232e;
-      --text: #e4e2dd;
-      --text-secondary: #9da5b4;
-      --text-muted: #6b7280;
-      --text-on-dark: #e4e2dd;
-      --text-on-dark-secondary: #9da5b4;
-      --text-on-dark-muted: #555d6e;
-      --accent: #d4a843;
-      --accent-hover: #e0b856;
-      --accent-soft: rgba(212, 168, 67, 0.1);
-      --accent-text: #d4a843;
-      --border: #252a34;
-      --border-subtle: #1e232c;
-      --border-dark: #252a34;
-      --success: #3daa72;
-      --success-soft: rgba(61, 170, 114, 0.1);
-      --warning: #d4912e;
-      --tag-bg: #1e232c;
-      --tag-text: #9da5b4;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
-      --shadow-md: 0 4px 12px rgba(0,0,0,0.25);
-      --shadow-lg: 0 8px 30px rgba(0,0,0,0.3);
-    }
-  }
-
-  :root[data-theme="dark"] {
-    --bg: #0d1017;
-    --bg-deep: #080b10;
-    --bg-surface: #151921;
-    --bg-surface-alt: #1a1e27;
-    --bg-hero: #080b10;
-    --bg-dark-section: #0a0d12;
-    --bg-dark-surface: #151921;
-    --bg-dark-surface-hover: #1e232e;
-    --text: #e4e2dd;
-    --text-secondary: #9da5b4;
-    --text-muted: #6b7280;
-    --text-on-dark: #e4e2dd;
-    --text-on-dark-secondary: #9da5b4;
-    --text-on-dark-muted: #555d6e;
-    --accent: #d4a843;
-    --accent-hover: #e0b856;
-    --accent-soft: rgba(212, 168, 67, 0.1);
-    --accent-text: #d4a843;
-    --border: #252a34;
-    --border-subtle: #1e232c;
-    --border-dark: #252a34;
-    --success: #3daa72;
-    --success-soft: rgba(61, 170, 114, 0.1);
-    --warning: #d4912e;
-    --tag-bg: #1e232c;
-    --tag-text: #9da5b4;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.25);
-    --shadow-lg: 0 8px 30px rgba(0,0,0,0.3);
+    --space: #05081A;
+    --deep-blue: #0B1230;
+    --cyan: #5EF3FF;
+    --violet: #8B6CFF;
+    --pink: #FF4FD8;
+    --white: #F4F2FF;
+    --muted: #AEB7D6;
+    --surface: #0E1235;
+    --surface-hover: #141940;
+    --border: rgba(94, 243, 255, 0.1);
+    --border-hover: rgba(94, 243, 255, 0.35);
+    --success: #3dda8e;
+    --success-soft: rgba(61, 218, 142, 0.1);
+    --gradient: linear-gradient(135deg, #5EF3FF, #8B6CFF, #FF4FD8);
+    --gradient-90: linear-gradient(90deg, #5EF3FF, #8B6CFF, #FF4FD8);
+    --glow-cyan: 0 0 20px rgba(94, 243, 255, 0.15);
+    --glow-violet: 0 0 20px rgba(139, 108, 255, 0.15);
+    --radius: 8px;
+    --radius-lg: 12px;
   }
 
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
 
   body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Outfit', -apple-system, sans-serif;
+    background: var(--space);
+    color: var(--white);
+    font-family: 'Inter', -apple-system, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
-  /* ── ANNOUNCEMENT BAR ── */
-  .announcement-bar {
-    background: var(--bg-hero);
-    color: var(--text-on-dark-secondary);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    text-align: center;
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-
-  .announcement-bar span {
-    color: var(--accent);
-    font-weight: 600;
-  }
+  h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
 
   /* ── NAV ── */
   .nav {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    padding: 0 max(1.25rem, env(safe-area-inset-left));
+    padding: 0 max(1.5rem, env(safe-area-inset-left));
+    transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s;
+    border-bottom: 1px solid transparent;
+  }
+
+  .nav.scrolled {
+    background: rgba(5, 8, 26, 0.92);
+    backdrop-filter: blur(20px);
+    border-bottom-color: var(--border);
   }
 
   .nav-inner {
@@ -157,29 +75,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 64px;
-    gap: 2rem;
+    height: 72px;
   }
 
   .nav-logo {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.75rem;
     text-decoration: none;
-    color: var(--text);
     flex-shrink: 0;
   }
 
-  .nav-logo svg { width: 32px; height: 32px; }
-
-  .nav-logo-text {
-    font-weight: 700;
-    font-size: 1.2rem;
-    letter-spacing: -0.02em;
-  }
-
-  .nav-logo-text span {
-    color: var(--accent);
+  .nav-logo img {
+    height: 40px;
+    width: auto;
   }
 
   .nav-links {
@@ -193,36 +102,55 @@
 
   .nav-links a {
     text-decoration: none;
-    color: var(--text-secondary);
+    color: var(--muted);
     font-size: 0.88rem;
     font-weight: 500;
-    padding: 0.4rem 0.75rem;
+    padding: 0.5rem 0.85rem;
     border-radius: var(--radius);
-    transition: color 0.15s, background 0.15s;
+    transition: color 0.2s;
+    position: relative;
   }
 
-  .nav-links a:hover {
-    color: var(--text);
-    background: var(--accent-soft);
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: var(--gradient-90);
+    transition: width 0.3s, left 0.3s;
   }
+
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a:hover::after { width: 80%; left: 10%; }
 
   .nav-cta {
-    background: var(--accent) !important;
-    color: #fff !important;
-    padding: 0.45rem 1.1rem !important;
+    background: transparent !important;
+    border: 1px solid rgba(94, 243, 255, 0.5) !important;
+    color: var(--cyan) !important;
+    padding: 0.5rem 1.25rem !important;
     border-radius: var(--radius) !important;
     font-weight: 600 !important;
     font-size: 0.85rem !important;
-    transition: background 0.15s !important;
+    transition: all 0.3s !important;
   }
 
-  .nav-cta:hover { background: var(--accent-hover) !important; }
+  .nav-cta:hover {
+    background: linear-gradient(90deg, #5EF3FF, #8B6CFF, #FF4FD8) !important;
+    color: var(--space) !important;
+    border-color: transparent !important;
+    box-shadow: 0 0 28px rgba(94, 243, 255, 0.3) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .nav-cta::after { display: none !important; }
 
   .mobile-toggle {
     display: none;
     background: none;
     border: none;
-    color: var(--text);
+    color: var(--white);
     cursor: pointer;
     padding: 0.5rem;
   }
@@ -233,91 +161,154 @@
     .nav-links.open {
       display: flex;
       flex-direction: column;
-      position: absolute;
-      top: 64px;
+      position: fixed;
+      top: 0;
       left: 0;
       right: 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      padding: 1rem;
+      bottom: 0;
+      background: rgba(5, 8, 26, 0.98);
+      backdrop-filter: blur(20px);
+      padding: 6rem 2rem 2rem;
       gap: 0.5rem;
+      z-index: 99;
+    }
+    .nav-links.open a {
+      font-size: 1.5rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      padding: 0.75rem 0;
+      color: var(--white);
+    }
+    .nav-links.open .nav-cta {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 1.1rem !important;
+      padding: 0.85rem 2rem !important;
     }
   }
 
   /* ── HERO ── */
   .hero {
-    background: var(--bg-hero);
-    color: var(--text-on-dark);
-    padding: 5rem max(1.25rem, env(safe-area-inset-left)) 4.5rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     overflow: hidden;
+    padding: 6rem max(1.5rem, env(safe-area-inset-left)) 4rem;
   }
 
-  .hero::before {
-    content: '';
+  #heroCanvas {
     position: absolute;
     inset: 0;
-    background: url('/beacapra-site/hero-vials.png') center/cover no-repeat;
-    opacity: 0.12;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(94, 243, 255, 0.08) 0%, rgba(139, 108, 255, 0.04) 40%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
     pointer-events: none;
   }
 
-  .hero-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+  .hero-orbital {
+    position: absolute;
+    border: 1px solid rgba(94, 243, 255, 0.08);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .orbital-1 {
+    width: 400px; height: 400px;
+    margin: -200px 0 0 -200px;
+    animation: orbit-rotate 20s linear infinite;
+  }
+
+  .orbital-2 {
+    width: 600px; height: 600px;
+    margin: -300px 0 0 -300px;
+    border-color: rgba(139, 108, 255, 0.06);
+    animation: orbit-rotate 30s linear infinite reverse;
+    transform: rotateX(60deg);
+  }
+
+  .orbital-3 {
+    width: 800px; height: 800px;
+    margin: -400px 0 0 -400px;
+    border-color: rgba(255, 79, 216, 0.04);
+    animation: orbit-rotate 40s linear infinite;
+    transform: rotateX(70deg) rotateZ(30deg);
+  }
+
+  .orbital-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 10px var(--cyan);
+    top: 0;
+    left: 50%;
+    margin-left: -3px;
+    margin-top: -3px;
+  }
+
+  @keyframes orbit-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+  .hero-content {
     position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
   }
 
-  .hero-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-
-  .hero-eyebrow::before {
-    content: '';
-    width: 24px;
-    height: 1px;
-    background: var(--accent);
+  .hero-logo {
+    display: block;
+    max-width: 280px;
+    margin: 0 auto 2.5rem;
+    filter: drop-shadow(0 0 40px rgba(94, 243, 255, 0.2));
   }
 
   .hero h1 {
-    font-family: 'Outfit', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 800;
-    line-height: 1.08;
-    letter-spacing: -0.03em;
-    margin: 0 0 1.25rem;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.5rem;
     text-wrap: balance;
+    color: var(--white);
   }
 
-  .hero h1 em {
-    font-style: normal;
-    color: var(--accent);
+  .hero h1 .gradient-text {
+    background: var(--gradient-90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .hero-sub {
     font-size: 1.1rem;
-    color: var(--text-on-dark-secondary);
-    line-height: 1.65;
-    margin: 0 0 2rem;
-    max-width: 480px;
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
   }
 
   .hero-actions {
     display: flex;
-    gap: 0.75rem;
+    gap: 1rem;
+    justify-content: center;
     flex-wrap: wrap;
   }
 
@@ -325,252 +316,79 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.85rem 1.75rem;
     border-radius: var(--radius);
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 0.92rem;
     font-weight: 600;
     text-decoration: none;
-    transition: all 0.15s;
     cursor: pointer;
     border: none;
+    transition: all 0.3s;
   }
 
   .btn-primary {
-    background: var(--accent);
-    color: #fff;
+    background: linear-gradient(90deg, #5EF3FF, #8B6CFF, #FF4FD8);
+    color: var(--space);
+    box-shadow: 0 0 24px rgba(94, 243, 255, 0.2);
   }
 
-  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-primary:hover {
+    box-shadow: 0 0 36px rgba(94, 243, 255, 0.35);
+    transform: translateY(-2px);
+  }
 
   .btn-outline {
-    background: transparent;
-    color: var(--text-on-dark);
-    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(5, 8, 26, 0.7);
+    color: var(--white);
+    border: 1px solid rgba(94, 243, 255, 0.4);
   }
 
   .btn-outline:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--cyan);
+    box-shadow: 0 0 20px rgba(94, 243, 255, 0.15);
+    transform: translateY(-2px);
   }
 
-  .hero-proof {
+  .hero-stats {
     display: flex;
-    gap: 2.5rem;
-    margin-top: 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
   }
 
-  .hero-proof-item {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .hero-proof-number {
+  .hero-stat-number {
     font-family: 'JetBrains Mono', monospace;
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--accent);
-    font-variant-numeric: tabular-nums;
-    line-height: 1.2;
-  }
-
-  .hero-proof-label {
-    font-size: 0.75rem;
-    color: var(--text-on-dark-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    font-weight: 500;
-    margin-top: 0.15rem;
-  }
-
-  .hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .hero-product-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: var(--radius-lg);
-    padding: 2rem;
-    width: 100%;
-    max-width: 420px;
-    backdrop-filter: blur(12px);
-  }
-
-  .hero-product-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
-    background: rgba(198,150,48,0.12);
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    display: inline-block;
-    margin-bottom: 1rem;
-  }
-
-  .hero-product-name {
-    font-size: 1.35rem;
-    font-weight: 700;
-    margin: 0 0 0.25rem;
-    color: var(--text-on-dark);
-  }
-
-  .hero-product-desc {
-    font-size: 0.85rem;
-    color: var(--text-on-dark-muted);
-    margin: 0 0 1.25rem;
-  }
-
-  .hero-product-specs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .spec-item {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: var(--radius);
-    padding: 0.6rem 0.75rem;
-  }
-
-  .spec-label {
-    font-size: 0.65rem;
-    color: var(--text-on-dark-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    font-weight: 500;
-  }
-
-  .spec-value {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--text-on-dark);
-    margin-top: 0.1rem;
-  }
-
-  .purchase-toggle {
-    display: flex;
-    background: rgba(255,255,255,0.04);
-    border-radius: var(--radius);
-    padding: 3px;
-    margin-bottom: 1rem;
-    border: 1px solid rgba(255,255,255,0.06);
-  }
-
-  .toggle-option {
-    flex: 1;
-    padding: 0.5rem;
-    text-align: center;
-    font-size: 0.8rem;
-    font-weight: 500;
-    border-radius: 4px;
-    cursor: pointer;
-    color: var(--text-on-dark-muted);
-    transition: all 0.2s;
-    border: none;
-    background: transparent;
-    font-family: inherit;
-  }
-
-  .toggle-option.active {
-    background: var(--accent);
-    color: #fff;
-    box-shadow: 0 2px 8px rgba(198,150,48,0.3);
-  }
-
-  .price-display {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .price-current {
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--text-on-dark);
+    background: var(--gradient-90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-variant-numeric: tabular-nums;
   }
 
-  .price-original {
-    font-size: 1rem;
-    color: var(--text-on-dark-muted);
-    text-decoration: line-through;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .price-save {
-    font-size: 0.75rem;
-    color: var(--success);
-    font-weight: 600;
-    background: var(--success-soft);
-    padding: 0.15rem 0.5rem;
-    border-radius: 3px;
-  }
-
-  .freq-selector {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .freq-option {
+  .hero-stat-label {
     font-size: 0.72rem;
-    padding: 0.3rem 0.6rem;
-    border-radius: 3px;
-    border: 1px solid rgba(255,255,255,0.1);
-    background: transparent;
-    color: var(--text-on-dark-muted);
-    cursor: pointer;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 500;
-    transition: all 0.15s;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.2rem;
   }
 
-  .freq-option.active {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: rgba(198,150,48,0.08);
-  }
-
-  .hero-add-btn {
-    width: 100%;
-    padding: 0.75rem;
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    border-radius: var(--radius);
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.92rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-
-  .hero-add-btn:hover { background: var(--accent-hover); }
-
-  @media (max-width: 768px) {
-    .hero { padding: 3rem 1.25rem; }
-    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    .hero-visual { order: -1; }
-    .hero-proof { gap: 1.5rem; flex-wrap: wrap; }
+  @media (max-width: 600px) {
+    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+    .hero-logo { max-width: 200px; }
   }
 
   /* ── TRUST BAR ── */
   .trust-bar {
-    background: var(--bg-surface);
+    background: var(--deep-blue);
+    border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    padding: 1.25rem max(1.25rem, env(safe-area-inset-left));
+    padding: 1.25rem max(1.5rem, env(safe-area-inset-left));
   }
 
   .trust-bar-inner {
@@ -585,16 +403,16 @@
   .trust-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
     font-size: 0.82rem;
     font-weight: 500;
-    color: var(--text-secondary);
+    color: var(--muted);
   }
 
   .trust-icon {
     width: 18px;
     height: 18px;
-    color: var(--accent);
+    color: var(--cyan);
     flex-shrink: 0;
   }
 
@@ -604,16 +422,8 @@
 
   /* ── SECTIONS ── */
   .section {
-    padding: 5rem max(1.25rem, env(safe-area-inset-left));
-  }
-
-  .section-dark {
-    background: var(--bg-dark-section);
-    color: var(--text-on-dark);
-  }
-
-  .section-alt {
-    background: var(--bg-deep);
+    padding: 6rem max(1.5rem, env(safe-area-inset-left));
+    position: relative;
   }
 
   .section-inner {
@@ -623,43 +433,60 @@
 
   .section-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
   }
 
   .section-eyebrow {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
+    font-size: 0.7rem;
     font-weight: 500;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--accent);
+    background: var(--gradient-90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 0.75rem;
   }
 
-  .section-dark .section-eyebrow { color: var(--accent); }
-
   .section-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
-    font-weight: 700;
-    line-height: 1.15;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 500;
+    line-height: 1.2;
     letter-spacing: -0.02em;
     margin: 0 0 0.75rem;
     text-wrap: balance;
-    color: var(--text);
+    color: var(--white);
   }
-
-  .section-dark .section-title { color: var(--text-on-dark); }
 
   .section-sub {
     font-size: 1rem;
-    color: var(--text-secondary);
+    color: var(--muted);
     max-width: 560px;
     margin: 0 auto;
-    line-height: 1.65;
+    line-height: 1.7;
   }
 
-  .section-dark .section-sub { color: var(--text-on-dark-secondary); }
+  /* Section divider glow line */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(94,243,255,0.2), rgba(139,108,255,0.2), transparent);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* ── REVEAL ANIMATION ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   /* ── CATEGORIES ── */
   .cat-grid {
@@ -669,32 +496,45 @@
   }
 
   .cat-card {
-    background: var(--bg-surface);
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     padding: 1.75rem 1.5rem;
     text-decoration: none;
-    color: var(--text);
-    transition: all 0.2s;
+    color: var(--white);
+    transition: all 0.3s;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cat-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(94,243,255,0.03), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
   }
 
   .cat-card:hover {
-    border-color: var(--accent);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
+    border-color: var(--border-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--glow-cyan);
   }
 
+  .cat-card:hover::before { opacity: 1; }
+
   .cat-icon {
-    width: 56px;
-    height: 56px;
-    background: var(--accent-soft);
+    width: 52px;
+    height: 52px;
+    background: rgba(94, 243, 255, 0.08);
     border-radius: var(--radius);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
-    color: var(--accent);
+    color: var(--cyan);
     overflow: hidden;
   }
 
@@ -706,40 +546,92 @@
   }
 
   .cat-name {
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 0.35rem;
-    color: var(--text);
   }
 
   .cat-count {
     font-size: 0.8rem;
-    color: var(--text-muted);
+    color: var(--muted);
   }
 
-  /* ── PRODUCT GRID ── */
+  /* ── PRODUCT TABS + GRID ── */
+  .product-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .product-tab {
+    padding: 0.5rem 1.1rem;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .product-tab:hover {
+    border-color: var(--border-hover);
+    color: var(--cyan);
+  }
+
+  .product-tab.active {
+    background: var(--gradient-90);
+    border-color: transparent;
+    color: var(--space);
+    font-weight: 600;
+  }
+
   .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.25rem;
   }
 
   .product-card {
-    background: var(--bg-dark-surface);
-    border: 1px solid var(--border-dark);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    transition: all 0.2s;
+    padding: 1.75rem 1.5rem;
+    transition: all 0.3s;
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-card::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: var(--radius-lg);
+    padding: 1px;
+    background: var(--gradient);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
   }
 
   .product-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(94, 243, 255, 0.08);
   }
+
+  .product-card:hover::after { opacity: 1; }
 
   .product-badge {
     font-family: 'JetBrains Mono', monospace;
@@ -747,39 +639,41 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
+    padding: 0.25rem 0.6rem;
+    border-radius: 100px;
     display: inline-block;
     margin-bottom: 0.75rem;
     width: fit-content;
   }
 
-  .badge-healing { background: rgba(45,134,89,0.15); color: #3daa72; }
-  .badge-aging { background: rgba(147,97,222,0.15); color: #a577e8; }
-  .badge-growth { background: rgba(59,130,246,0.15); color: #6ea8f7; }
-  .badge-cognitive { background: rgba(236,171,62,0.15); color: #ecab3e; }
-  .badge-stack { background: rgba(198,150,48,0.15); color: var(--accent); }
+  .badge-healing { background: rgba(61,218,142,0.12); color: #3dda8e; }
+  .badge-aging { background: rgba(139,108,255,0.12); color: #a88fff; }
+  .badge-growth { background: rgba(94,243,255,0.12); color: #5EF3FF; }
+  .badge-cognitive { background: rgba(255,79,216,0.12); color: #FF4FD8; }
+  .badge-weight { background: rgba(255,165,0,0.12); color: #ffa500; }
+  .badge-stack { background: linear-gradient(90deg, rgba(94,243,255,0.12), rgba(139,108,255,0.12)); color: var(--cyan); }
 
   .product-name {
-    font-size: 1.05rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
     font-weight: 600;
-    color: var(--text-on-dark);
+    color: var(--white);
     margin-bottom: 0.25rem;
-    line-height: 1.3;
   }
 
   .product-size {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--text-on-dark-muted);
+    font-size: 0.72rem;
+    color: var(--muted);
     margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
   }
 
   .product-desc {
-    font-size: 0.82rem;
-    color: var(--text-on-dark-secondary);
-    line-height: 1.55;
-    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
     flex: 1;
   }
 
@@ -787,73 +681,47 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--border-dark);
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
   }
 
   .product-price {
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--text-on-dark);
+    font-size: 1.15rem;
+    color: var(--white);
     font-variant-numeric: tabular-nums;
   }
 
   .product-sub-price {
-    font-size: 0.75rem;
-    color: var(--accent);
+    font-size: 0.72rem;
+    color: var(--cyan);
     font-weight: 500;
-  }
-
-  /* ── HOW IT WORKS ── */
-  .how-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .how-step {
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 1.75rem 1.5rem;
-    position: relative;
-  }
-
-  .how-number {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
+  }
+
+  .product-explore {
+    font-size: 0.78rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
+    color: var(--cyan);
+    opacity: 0;
+    transition: opacity 0.3s;
   }
 
-  .how-title {
-    font-weight: 600;
-    font-size: 1.05rem;
-    margin-bottom: 0.5rem;
-    color: var(--text);
-  }
+  .product-card:hover .product-explore { opacity: 1; }
 
-  .how-desc {
-    font-size: 0.88rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-
-  /* ── SUBSCRIBE SECTION ── */
+  /* ── SUBSCRIBE & SAVE ── */
   .sub-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 4rem;
     align-items: center;
   }
 
   .sub-features {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1.5rem;
   }
 
   .sub-feature {
@@ -863,36 +731,49 @@
   }
 
   .sub-feature-icon {
-    width: 36px;
-    height: 36px;
-    background: var(--accent-soft);
+    width: 40px;
+    height: 40px;
+    background: rgba(94, 243, 255, 0.06);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    color: var(--accent);
+    color: var(--cyan);
   }
 
   .sub-feature-title {
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
     font-size: 0.95rem;
-    margin-bottom: 0.15rem;
-    color: var(--text);
+    margin-bottom: 0.2rem;
+    color: var(--white);
   }
 
   .sub-feature-desc {
     font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
+    color: var(--muted);
+    line-height: 1.6;
   }
 
   .sub-card {
-    background: var(--bg-surface);
-    border: 2px solid var(--accent);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 2rem;
-    box-shadow: 0 4px 20px rgba(198,150,48,0.1);
+    padding: 2.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sub-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-90);
   }
 
   .sub-card-tag {
@@ -901,35 +782,36 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent-text);
-    background: var(--accent-soft);
-    padding: 0.2rem 0.6rem;
-    border-radius: 3px;
-    display: inline-block;
+    background: var(--gradient-90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1rem;
+    display: inline-block;
   }
 
   .sub-card-title {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.35rem;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--text);
+    color: var(--white);
   }
 
   .sub-card-desc {
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: var(--muted);
     margin-bottom: 1.5rem;
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
   .sub-benefits {
     list-style: none;
     padding: 0;
-    margin: 0 0 1.5rem;
+    margin: 0 0 1.75rem;
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.65rem;
   }
 
   .sub-benefits li {
@@ -937,344 +819,67 @@
     align-items: center;
     gap: 0.6rem;
     font-size: 0.88rem;
-    color: var(--text-secondary);
+    color: var(--muted);
   }
 
-  .sub-benefits li svg {
-    width: 16px;
-    height: 16px;
-    color: var(--success);
-    flex-shrink: 0;
-  }
+  .sub-benefits li svg { width: 16px; height: 16px; color: var(--success); flex-shrink: 0; }
 
-  .sub-card .btn {
-    width: 100%;
-    justify-content: center;
-  }
+  .sub-card .btn { width: 100%; justify-content: center; }
 
-  @media (max-width: 768px) {
-    .sub-grid { grid-template-columns: 1fr; }
-    .section-inner > div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
-  }
+  @media (max-width: 768px) { .sub-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
 
-  /* ── QUALITY SECTION ── */
+  /* ── QUALITY / SCIENCE ── */
   .quality-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.25rem;
   }
 
   .quality-card {
-    background: var(--bg-dark-surface);
-    border: 1px solid var(--border-dark);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 1.75rem 1.5rem;
+    padding: 2rem 1.75rem;
+    transition: all 0.3s;
+  }
+
+  .quality-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--glow-cyan);
   }
 
   .quality-card-icon {
-    width: 40px;
-    height: 40px;
-    background: rgba(198,150,48,0.1);
+    width: 44px;
+    height: 44px;
+    background: rgba(94, 243, 255, 0.06);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
-    color: var(--accent);
+    margin-bottom: 1.25rem;
+    color: var(--cyan);
   }
 
   .quality-card-title {
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
-    font-size: 1rem;
-    color: var(--text-on-dark);
-    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
   }
 
   .quality-card-desc {
     font-size: 0.85rem;
-    color: var(--text-on-dark-secondary);
-    line-height: 1.6;
-  }
-
-  /* ── BLOG PREVIEW ── */
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.25rem;
-  }
-
-  .blog-card {
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    transition: all 0.2s;
-    cursor: pointer;
-    text-decoration: none;
-    color: var(--text);
-  }
-
-  .blog-card:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
-  }
-
-  .blog-img {
-    width: 100%;
-    height: 180px;
-    background: var(--bg-deep);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .blog-body {
-    padding: 1.25rem 1.5rem;
-  }
-
-  .blog-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.62rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent-text);
-    margin-bottom: 0.5rem;
-  }
-
-  .blog-title {
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 1.35;
-    margin-bottom: 0.5rem;
-    color: var(--text);
-  }
-
-  .blog-excerpt {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
-  }
-
-  /* ── RUO DISCLAIMER ── */
-  .ruo-bar {
-    background: var(--bg-dark-section);
-    border-top: 1px solid var(--border-dark);
-    padding: 1.25rem max(1.25rem, env(safe-area-inset-left));
-    text-align: center;
-  }
-
-  .ruo-bar p {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
-    color: var(--text-on-dark-muted);
-    margin: 0;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.7;
-    letter-spacing: 0.02em;
-  }
-
-  /* ── FOOTER ── */
-  .footer {
-    background: var(--bg-hero);
-    color: var(--text-on-dark);
-    padding: 4rem max(1.25rem, env(safe-area-inset-left)) 2rem;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-
-  .footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 3rem;
-  }
-
-  .footer-brand p {
-    font-size: 0.85rem;
-    color: var(--text-on-dark-secondary);
+    color: var(--muted);
     line-height: 1.65;
-    margin: 0.75rem 0 0;
-    max-width: 280px;
-  }
-
-  .footer-col-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-on-dark-muted);
-    margin-bottom: 1rem;
-  }
-
-  .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .footer-links a {
-    font-size: 0.88rem;
-    color: var(--text-on-dark-secondary);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-
-  .footer-links a:hover { color: var(--accent); }
-
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    font-size: 0.78rem;
-    color: var(--text-on-dark-muted);
-  }
-
-  .footer-social {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .footer-social a {
-    color: var(--text-on-dark-muted);
-    transition: color 0.15s;
-  }
-
-  .footer-social a:hover { color: var(--accent); }
-
-  @media (max-width: 768px) {
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem 1.5rem; }
-    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
-  }
-
-  @media (max-width: 420px) {
-    .footer-grid { grid-template-columns: 1fr; }
-  }
-
-  /* ── CTA BANNER ── */
-  .cta-banner {
-    background: linear-gradient(135deg, #14181f 0%, #1a1e27 100%);
-    border: 1px solid var(--border-dark);
-    border-radius: var(--radius-lg);
-    padding: 3rem 2rem;
-    text-align: center;
-    margin-top: 3rem;
-  }
-
-  .cta-banner h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-on-dark);
-    margin: 0 0 0.75rem;
-  }
-
-  .cta-banner p {
-    font-size: 0.95rem;
-    color: var(--text-on-dark-secondary);
-    margin: 0 0 1.5rem;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* ── NEWSLETTER ── */
-  .newsletter {
-    background: linear-gradient(135deg, #0d1117 0%, #14181f 50%, #1a1e27 100%);
-    padding: 4rem max(1.25rem, env(safe-area-inset-left));
-    text-align: center;
-    border-top: 1px solid rgba(198,150,48,0.15);
-    border-bottom: 1px solid rgba(198,150,48,0.15);
-  }
-
-  .newsletter-inner {
-    max-width: 540px;
-    margin: 0 auto;
-  }
-
-  .newsletter h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-on-dark);
-    margin: 0 0 0.5rem;
-  }
-
-  .newsletter p {
-    font-size: 0.92rem;
-    color: var(--text-on-dark-secondary);
-    margin: 0 0 1.5rem;
-    line-height: 1.6;
-  }
-
-  .newsletter-form {
-    display: flex;
-    gap: 0.5rem;
-    max-width: 440px;
-    margin: 0 auto;
-  }
-
-  .newsletter-input {
-    flex: 1;
-    padding: 0.7rem 1rem;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: var(--radius);
-    color: var(--text-on-dark);
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.9rem;
-  }
-
-  .newsletter-input::placeholder { color: var(--text-on-dark-muted); }
-  .newsletter-input:focus { outline: none; border-color: var(--accent); }
-
-  .newsletter-btn {
-    padding: 0.7rem 1.5rem;
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    border-radius: var(--radius);
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.88rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.15s;
-    white-space: nowrap;
-  }
-
-  .newsletter-btn:hover { background: var(--accent-hover); }
-
-  .newsletter-legal {
-    font-size: 0.7rem;
-    color: var(--text-on-dark-muted);
-    margin-top: 0.75rem;
-  }
-
-  @media (max-width: 480px) {
-    .newsletter-form { flex-direction: column; }
   }
 
   /* ── CALCULATOR ── */
   .calc-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: start;
   }
 
@@ -1286,47 +891,63 @@
 
   .calc-field label {
     display: block;
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    color: var(--text-on-dark-secondary);
+    color: var(--muted);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     margin-bottom: 0.4rem;
+    font-family: 'JetBrains Mono', monospace;
   }
 
   .calc-field input, .calc-field select {
     width: 100%;
-    padding: 0.65rem 0.85rem;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.12);
+    padding: 0.7rem 0.9rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
-    color: var(--text-on-dark);
+    color: var(--white);
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.9rem;
-    font-weight: 500;
+    transition: border-color 0.2s;
   }
 
   .calc-field input:focus, .calc-field select:focus {
     outline: none;
-    border-color: var(--accent);
+    border-color: var(--cyan);
+    box-shadow: 0 0 12px rgba(94,243,255,0.1);
   }
 
-  .calc-field select option { background: #1a1e27; color: #e8e5df; }
+  .calc-field select option { background: var(--surface); color: var(--white); }
 
   .calc-result {
-    background: rgba(198,150,48,0.08);
-    border: 1px solid rgba(198,150,48,0.2);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 1.75rem;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .calc-result::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-90);
   }
 
   .calc-result-title {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.68rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--accent);
+    background: var(--gradient-90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1.25rem;
   }
 
@@ -1334,32 +955,23 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--border);
   }
 
   .calc-result-row:last-child { border-bottom: none; }
-
-  .calc-result-label {
-    font-size: 0.85rem;
-    color: var(--text-on-dark-secondary);
-  }
+  .calc-result-label { font-size: 0.85rem; color: var(--muted); }
 
   .calc-result-value {
     font-family: 'JetBrains Mono', monospace;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--text-on-dark);
+    color: var(--white);
   }
 
-  .calc-result-value.highlight {
-    color: var(--accent);
-    font-size: 1.15rem;
-  }
+  .calc-result-value.highlight { color: var(--cyan); font-size: 1.1rem; }
 
-  @media (max-width: 768px) {
-    .calc-container { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 768px) { .calc-container { grid-template-columns: 1fr; } }
 
   /* ── COMPARISON TABLE ── */
   .compare-table-wrap {
@@ -1376,46 +988,34 @@
   }
 
   .compare-table thead th {
-    background: var(--bg-surface-alt);
-    padding: 0.75rem 1rem;
+    background: var(--surface);
+    padding: 0.85rem 1rem;
     text-align: left;
     font-weight: 600;
-    font-size: 0.78rem;
-    color: var(--text-secondary);
+    font-size: 0.75rem;
+    color: var(--muted);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     border-bottom: 1px solid var(--border);
     white-space: nowrap;
+    font-family: 'JetBrains Mono', monospace;
   }
 
-  .compare-table thead th:first-child { border-radius: var(--radius-lg) 0 0 0; }
-  .compare-table thead th:last-child { border-radius: 0 var(--radius-lg) 0 0; }
-
   .compare-table tbody td {
-    padding: 0.7rem 1rem;
-    border-bottom: 1px solid var(--border-subtle);
-    color: var(--text-secondary);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
     vertical-align: middle;
   }
 
   .compare-table tbody tr:last-child td { border-bottom: none; }
+  .compare-table tbody td:first-child { font-weight: 500; color: var(--white); }
 
-  .compare-table tbody td:first-child {
-    font-weight: 500;
-    color: var(--text);
-  }
-
-  .compare-highlight {
-    background: var(--accent-soft);
-  }
-
-  .compare-highlight td:first-child {
-    color: var(--accent-text) !important;
-    font-weight: 700 !important;
-  }
+  .compare-highlight { background: rgba(94, 243, 255, 0.03); }
+  .compare-highlight td:first-child { color: var(--cyan) !important; font-weight: 600 !important; }
 
   .check-yes { color: var(--success); font-weight: 600; }
-  .check-no { color: var(--text-muted); }
+  .check-no { color: rgba(174, 183, 214, 0.4); }
 
   /* ── REVIEWS ── */
   .reviews-grid {
@@ -1425,58 +1025,110 @@
   }
 
   .review-card {
-    background: var(--bg-dark-surface);
-    border: 1px solid var(--border-dark);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 1.5rem;
+    padding: 1.75rem;
+    transition: all 0.3s;
   }
 
+  .review-card:hover { border-color: var(--border-hover); }
+
   .review-stars {
-    color: var(--accent);
-    font-size: 0.9rem;
+    background: var(--gradient-90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 0.95rem;
     margin-bottom: 0.75rem;
     letter-spacing: 0.1em;
   }
 
   .review-text {
     font-size: 0.9rem;
-    color: var(--text-on-dark-secondary);
-    line-height: 1.65;
-    margin-bottom: 1rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
     font-style: italic;
   }
 
-  .review-author {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
+  .review-author { display: flex; align-items: center; gap: 0.6rem; }
 
   .review-avatar {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background: rgba(198,150,48,0.15);
+    background: rgba(94, 243, 255, 0.08);
+    border: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--cyan);
+    font-family: 'JetBrains Mono', monospace;
   }
 
-  .review-name {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--text-on-dark);
+  .review-name { font-size: 0.85rem; font-weight: 600; color: var(--white); }
+  .review-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--success); }
+
+  /* ── BLOG ── */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
   }
 
-  .review-badge {
+  .blog-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--white);
+  }
+
+  .blog-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--glow-cyan);
+  }
+
+  .blog-img {
+    width: 100%;
+    height: 180px;
+    background: var(--deep-blue);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .blog-body { padding: 1.25rem 1.5rem; }
+
+  .blog-tag {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.6rem;
-    color: var(--success);
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--gradient-90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
   }
+
+  .blog-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+  }
+
+  .blog-excerpt { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
 
   /* ── FAQ ── */
   .faq-list {
@@ -1484,12 +1136,9 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 0;
   }
 
-  .faq-item {
-    border-bottom: 1px solid var(--border);
-  }
+  .faq-item { border-bottom: 1px solid var(--border); }
 
   .faq-question {
     width: 100%;
@@ -1499,112 +1148,314 @@
     padding: 1.25rem 0;
     background: none;
     border: none;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1rem;
-    font-weight: 600;
-    color: var(--text);
+    font-weight: 500;
+    color: var(--white);
     cursor: pointer;
     text-align: left;
     gap: 1rem;
+    transition: color 0.2s;
   }
 
-  .faq-question:hover { color: var(--accent-text); }
+  .faq-question:hover { color: var(--cyan); }
 
   .faq-chevron {
     width: 20px;
     height: 20px;
     flex-shrink: 0;
-    transition: transform 0.2s;
-    color: var(--text-muted);
+    transition: transform 0.3s;
+    color: var(--muted);
   }
 
-  .faq-item.open .faq-chevron { transform: rotate(180deg); }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--cyan); }
 
   .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.4s ease;
   }
 
   .faq-answer-inner {
     padding: 0 0 1.25rem;
     font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
+    color: var(--muted);
+    line-height: 1.75;
   }
 
   .faq-item.open .faq-answer { max-height: 300px; }
 
-  /* ── ALL PRODUCTS TABS ── */
-  .product-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
-    margin-bottom: 2rem;
+  /* ── NEWSLETTER ── */
+  .newsletter {
+    background: var(--deep-blue);
+    padding: 5rem max(1.5rem, env(safe-area-inset-left));
+    text-align: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
   }
 
-  .product-tab {
-    padding: 0.45rem 1rem;
-    border-radius: var(--radius);
-    border: 1px solid var(--border-dark);
-    background: transparent;
-    color: var(--text-on-dark-muted);
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.82rem;
+  .newsletter::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 108, 255, 0.06) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .newsletter-inner {
+    max-width: 540px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .newsletter h3 {
+    font-size: 1.5rem;
     font-weight: 500;
+    color: var(--white);
+    margin: 0 0 0.5rem;
+  }
+
+  .newsletter p {
+    font-size: 0.92rem;
+    color: var(--muted);
+    margin: 0 0 1.5rem;
+    line-height: 1.65;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .newsletter-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+  }
+
+  .newsletter-input::placeholder { color: rgba(174, 183, 214, 0.4); }
+  .newsletter-input:focus { outline: none; border-color: var(--cyan); box-shadow: 0 0 12px rgba(94,243,255,0.1); }
+
+  .newsletter-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--gradient-90);
+    color: var(--space);
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.15s;
+    transition: all 0.3s;
+    white-space: nowrap;
   }
 
-  .product-tab:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+  .newsletter-btn:hover { box-shadow: 0 0 24px rgba(94, 243, 255, 0.25); transform: translateY(-1px); }
+
+  .newsletter-legal { font-size: 0.7rem; color: rgba(174, 183, 214, 0.4); margin-top: 0.75rem; }
+
+  @media (max-width: 480px) { .newsletter-form { flex-direction: column; } }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 3.5rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
   }
 
-  .product-tab.active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #fff;
+  .cta-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-90);
   }
 
-  /* SVG inline icons */
-  .icon-sm { width: 16px; height: 16px; }
-  .icon-md { width: 20px; height: 20px; }
+  .cta-banner h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--white);
+    margin: 0 0 0.75rem;
+  }
+
+  .cta-banner p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin: 0 0 1.75rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.65;
+  }
+
+  /* ── RUO ── */
+  .ruo-bar {
+    background: var(--deep-blue);
+    border-top: 1px solid var(--border);
+    padding: 1.5rem max(1.5rem, env(safe-area-inset-left));
+    text-align: center;
+  }
+
+  .ruo-bar p {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(174, 183, 214, 0.4);
+    margin: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--space);
+    color: var(--white);
+    padding: 4.5rem max(1.5rem, env(safe-area-inset-left)) 2rem;
+    border-top: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer-orbital {
+    position: absolute;
+    border: 1px solid rgba(94, 243, 255, 0.04);
+    border-radius: 50%;
+    bottom: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    pointer-events: none;
+    animation: orbit-rotate 30s linear infinite;
+  }
+
+  .footer-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-brand-logo { height: 36px; width: auto; margin-bottom: 0.75rem; display: block; }
+
+  .footer-brand p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+    max-width: 280px;
+  }
+
+  .footer-col-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.88rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--cyan); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.78rem;
+    color: rgba(174, 183, 214, 0.4);
+  }
+
+  .footer-social { display: flex; gap: 1rem; }
+
+  .footer-social a { color: var(--muted); transition: color 0.2s; }
+  .footer-social a:hover { color: var(--cyan); }
+
+  @media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem 1.5rem; }
+    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+
+  @media (max-width: 420px) { .footer-grid { grid-template-columns: 1fr; } }
+
+  /* ── WHAT IS BEACAPRA ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .about-grid img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+  }
+
+  @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 2rem; } }
 </style>
 </head>
 <body>
 
-<!-- ═══ ANNOUNCEMENT BAR ═══ -->
-<div class="announcement-bar">
-  <span>99%+ HPLC Verified</span> &nbsp;·&nbsp; Free Shipping Over $149 &nbsp;·&nbsp; The Only <span>Subscribe &amp; Save</span> in Peptides
-</div>
-
 <!-- ═══ NAVIGATION ═══ -->
-<nav class="nav">
+<nav class="nav" id="mainNav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16 2L8 8V14L4 18V28H12V22H20V28H28V18L24 14V8L16 2Z" fill="currentColor" opacity="0.1"/>
-        <path d="M16 4L10 9V14L6 18V26H12V20H20V26H26V18L22 14V9L16 4Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-        <path d="M16 4L12 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
-        <path d="M16 4L20 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
-        <path d="M10 14L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M22 14L26 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        <circle cx="16" cy="14" r="2" fill="currentColor" opacity="0.6"/>
-      </svg>
-      <span class="nav-logo-text">Bea<span>Capra</span></span>
+      <img src="beacapra-logo.jpeg" alt="BeaCapra" style="height: 40px;">
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#shop">Shop</a></li>
-      <li><a href="#subscribe">Subscribe</a></li>
+      <li><a href="#formulas">Products</a></li>
       <li><a href="#science">Science</a></li>
-      <li><a href="#blog">Learn</a></li>
-      <li><a href="#calculator">Tools</a></li>
-      <li><a href="#affiliate">Affiliates</a></li>
+      <li><a href="#subscribe">Protocols</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#" class="nav-cta">Shop Now</a></li>
     </ul>
-    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
       </svg>
@@ -1614,72 +1465,32 @@
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
-  <div class="hero-inner">
-    <div>
-      <div class="hero-eyebrow">Bea Capra — Be The GOAT</div>
-      <h1>Build the Best<br>Version of <em>You.</em></h1>
-      <p class="hero-sub">Research-grade peptides, independently tested, with the only subscribe &amp; save program in the industry. Every batch verified. Every COA published.</p>
-      <div class="hero-actions">
-        <a href="#shop" class="btn btn-primary">
-          <svg class="icon-sm" viewBox="0 0 16 16" fill="currentColor"><path d="M2 3h2l.4 2M6 11h6a1 1 0 001-.8L14.4 5H5.2M6 11l-.8-4M6 11a1.5 1.5 0 103 0m3 0a1.5 1.5 0 103 0"/></svg>
-          Shop Peptides
-        </a>
-        <a href="#science" class="btn btn-outline">View COA Library</a>
-      </div>
-      <div class="hero-proof">
-        <div class="hero-proof-item">
-          <div class="hero-proof-number">>99%</div>
-          <div class="hero-proof-label">HPLC Purity</div>
-        </div>
-        <div class="hero-proof-item">
-          <div class="hero-proof-number">24</div>
-          <div class="hero-proof-label">Research Compounds</div>
-        </div>
-        <div class="hero-proof-item">
-          <div class="hero-proof-number">15%</div>
-          <div class="hero-proof-label">Subscribe &amp; Save</div>
-        </div>
-      </div>
-    </div>
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-glow"></div>
+  <div class="hero-orbital orbital-1"><div class="orbital-dot"></div></div>
+  <div class="hero-orbital orbital-2"><div class="orbital-dot" style="background: var(--violet); box-shadow: 0 0 10px var(--violet);"></div></div>
+  <div class="hero-orbital orbital-3"><div class="orbital-dot" style="background: var(--pink); box-shadow: 0 0 10px var(--pink);"></div></div>
 
-    <div class="hero-visual">
-      <div class="hero-product-card">
-        <div class="hero-product-tag">Best Seller</div>
-        <div class="hero-product-name">BeaCapra BPC-157</div>
-        <div class="hero-product-desc">Recovery &amp; Repair — 10mg lyophilized</div>
-        <div class="hero-product-specs">
-          <div class="spec-item">
-            <div class="spec-label">Purity</div>
-            <div class="spec-value">>99.2%</div>
-          </div>
-          <div class="spec-item">
-            <div class="spec-label">Form</div>
-            <div class="spec-value">Lyophilized</div>
-          </div>
-          <div class="spec-item">
-            <div class="spec-label">Weight</div>
-            <div class="spec-value">10mg</div>
-          </div>
-          <div class="spec-item">
-            <div class="spec-label">COA</div>
-            <div class="spec-value">Per Batch</div>
-          </div>
-        </div>
-        <div class="purchase-toggle">
-          <button class="toggle-option" onclick="togglePurchase(this, false)">One-Time</button>
-          <button class="toggle-option active" onclick="togglePurchase(this, true)">Subscribe &amp; Save</button>
-        </div>
-        <div class="price-display" id="priceDisplay">
-          <span class="price-current" id="priceMain">$63.74</span>
-          <span class="price-original" id="priceOrig">$74.99</span>
-          <span class="price-save" id="priceSave">Save 15%</span>
-        </div>
-        <div class="freq-selector" id="freqSelector">
-          <button class="freq-option active" onclick="setFreq(this)">30 days</button>
-          <button class="freq-option" onclick="setFreq(this)">60 days</button>
-          <button class="freq-option" onclick="setFreq(this)">90 days</button>
-        </div>
-        <button class="hero-add-btn">Add to Cart — Subscribe</button>
+  <div class="hero-content">
+    <img src="beacapra-logo.jpeg" alt="BeaCapra — Peptide Science" class="hero-logo">
+    <h1>Precision compounds.<br><span class="gradient-text">Designed for the next phase</span><br>of human performance.</h1>
+    <p class="hero-sub">Research-grade peptides, independently tested, with the only subscribe & save program in the industry. Every batch verified. Every COA published.</p>
+    <div class="hero-actions">
+      <a href="#formulas" class="btn btn-primary">Explore the Collection</a>
+      <a href="#science" class="btn btn-outline">Enter the Lab</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-number">>99%</div>
+        <div class="hero-stat-label">HPLC Purity</div>
+      </div>
+      <div>
+        <div class="hero-stat-number">24</div>
+        <div class="hero-stat-label">Research Compounds</div>
+      </div>
+      <div>
+        <div class="hero-stat-number">15%</div>
+        <div class="hero-stat-label">Subscribe & Save</div>
       </div>
     </div>
   </div>
@@ -1690,84 +1501,78 @@
   <div class="trust-bar-inner">
     <div class="trust-item">
       <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      Independent 3rd-Party Testing
+      99%+ HPLC Verified
     </div>
     <div class="trust-item">
-      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-      HPLC &amp; Mass Spectrometry Verified
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Batch-Specific COAs
     </div>
     <div class="trust-item">
       <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h2a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2v-2"/></svg>
-      Free Shipping Over $149
+      Same-Day Shipping
     </div>
     <div class="trust-item">
-      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-      Cancel or Pause Anytime
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg>
+      Subscribe & Save
     </div>
   </div>
 </div>
 
 <!-- ═══ CATEGORIES ═══ -->
 <section class="section" id="shop">
-  <div class="section-inner">
+  <div class="section-inner reveal">
     <div class="section-header">
       <div class="section-eyebrow">Research Catalog</div>
-      <h2 class="section-title">Shop by Category</h2>
+      <h2 class="section-title">Shop by Protocol</h2>
       <p class="section-sub">24 research-grade peptides across six categories. Every compound independently tested, every batch documented.</p>
     </div>
     <div class="cat-grid">
       <a class="cat-card">
-        <div class="cat-icon">
-          <img src="icon-healing.png" alt="Healing peptides">
-        </div>
-        <div class="cat-name">Healing &amp; Recovery</div>
+        <div class="cat-icon"><img src="icon-healing.png" alt="Healing"></div>
+        <div class="cat-name">Healing & Recovery</div>
         <div class="cat-count">BPC-157, TB-500, GHK-Cu + stacks</div>
       </a>
       <a class="cat-card">
-        <div class="cat-icon">
-          <img src="icon-longevity.png" alt="Anti-aging peptides">
-        </div>
-        <div class="cat-name">Anti-Aging &amp; Longevity</div>
+        <div class="cat-icon"><img src="icon-longevity.png" alt="Longevity"></div>
+        <div class="cat-name">Anti-Aging & Longevity</div>
         <div class="cat-count">Epithalon, MOTS-C, NAD+</div>
       </a>
       <a class="cat-card">
-        <div class="cat-icon">
-          <img src="icon-growth.png" alt="Growth hormone peptides">
-        </div>
+        <div class="cat-icon"><img src="icon-growth.png" alt="Growth"></div>
         <div class="cat-name">Growth Hormone</div>
         <div class="cat-count">CJC-1295, Ipamorelin, Sermorelin</div>
       </a>
       <a class="cat-card">
-        <div class="cat-icon">
-          <img src="icon-cognitive.png" alt="Cognitive peptides">
-        </div>
+        <div class="cat-icon"><img src="icon-cognitive.png" alt="Cognitive"></div>
         <div class="cat-name">Cognitive</div>
         <div class="cat-count">Semax, Selank, Dihexa</div>
       </a>
       <a class="cat-card">
         <div class="cat-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
         </div>
-        <div class="cat-name">Weight &amp; Metabolic</div>
+        <div class="cat-name">Weight & Metabolic</div>
         <div class="cat-count">Retatrutide, AOD-9604</div>
       </a>
       <a class="cat-card">
         <div class="cat-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
         </div>
-        <div class="cat-name">Stacks &amp; Bundles</div>
+        <div class="cat-name">Stacks & Bundles</div>
         <div class="cat-count">6 curated protocol stacks — save 20%</div>
       </a>
     </div>
   </div>
 </section>
 
+<div class="section-divider"></div>
+
 <!-- ═══ ALL PRODUCTS ═══ -->
-<section class="section section-dark" id="all-products">
-  <div class="section-inner">
+<section class="section" id="formulas">
+  <div class="section-inner reveal">
     <div class="section-header">
       <div class="section-eyebrow">Full Catalog</div>
-      <h2 class="section-title">All Research Compounds</h2>
+      <h2 class="section-title">All Research Formulas</h2>
       <p class="section-sub">24 independently verified peptides. Filter by category. Every compound includes per-batch COA.</p>
     </div>
     <div class="product-tabs">
@@ -1780,228 +1585,204 @@
       <button class="product-tab" onclick="filterProducts('stack', this)">Stacks</button>
     </div>
     <div class="product-grid" id="productGrid">
-      <!-- HEALING -->
       <div class="product-card" data-cat="healing">
         <div class="product-badge badge-healing">Healing</div>
         <div class="product-name">BeaCapra BPC-157</div>
         <div class="product-size">5mg — Lyophilized</div>
         <div class="product-desc">Body Protection Compound-157. 15-amino acid synthetic peptide from gastric juice proteins. The most-researched healing peptide.</div>
-        <div class="product-footer"><div><div class="product-price">$44.99</div><div class="product-sub-price">$38.24 subscribed</div></div></div>
+        <div class="product-footer"><div><div class="product-price">$44.99</div><div class="product-sub-price">$38.24 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="healing">
         <div class="product-badge badge-healing">Healing · Best Seller</div>
         <div class="product-name">BeaCapra BPC-157</div>
         <div class="product-size">10mg — Lyophilized</div>
         <div class="product-desc">Higher concentration BPC-157. Extensively researched for tissue repair, gut integrity, and anti-inflammatory mechanisms across 100+ studies.</div>
-        <div class="product-footer"><div><div class="product-price">$74.99</div><div class="product-sub-price">$63.74 subscribed</div></div></div>
+        <div class="product-footer"><div><div class="product-price">$74.99</div><div class="product-sub-price">$63.74 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="healing">
         <div class="product-badge badge-healing">Healing</div>
         <div class="product-name">BeaCapra TB-500</div>
         <div class="product-size">5mg — Lyophilized</div>
         <div class="product-desc">Thymosin Beta-4 fragment. 43-amino acid peptide researched for cell migration, angiogenesis, and wound healing pathways.</div>
-        <div class="product-footer"><div><div class="product-price">$49.99</div><div class="product-sub-price">$42.49 subscribed</div></div></div>
+        <div class="product-footer"><div><div class="product-price">$49.99</div><div class="product-sub-price">$42.49 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="healing">
         <div class="product-badge badge-healing">Healing</div>
         <div class="product-name">BeaCapra TB-500</div>
         <div class="product-size">10mg — Lyophilized</div>
         <div class="product-desc">Higher-dose Thymosin Beta-4. Research focuses on cell migration, blood vessel growth, and inflammatory response modulation.</div>
-        <div class="product-footer"><div><div class="product-price">$84.99</div><div class="product-sub-price">$72.24 subscribed</div></div></div>
+        <div class="product-footer"><div><div class="product-price">$84.99</div><div class="product-sub-price">$72.24 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="healing">
         <div class="product-badge badge-healing">Anti-Aging + Healing</div>
         <div class="product-name">BeaCapra GHK-Cu</div>
         <div class="product-size">10mg — Lyophilized</div>
         <div class="product-desc">Copper tripeptide. Researched for collagen synthesis, wound healing, and skin remodeling in over 60 published studies.</div>
-        <div class="product-footer"><div><div class="product-price">$49.99</div><div class="product-sub-price">$42.49 subscribed</div></div></div>
+        <div class="product-footer"><div><div class="product-price">$49.99</div><div class="product-sub-price">$42.49 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
-      <!-- ANTI-AGING -->
       <div class="product-card" data-cat="aging">
         <div class="product-badge badge-aging">Longevity</div>
         <div class="product-name">BeaCapra Epithalon</div>
         <div class="product-size">10mg — Lyophilized</div>
         <div class="product-desc">Epithalamin-derived tetrapeptide. Researched for telomerase activation and circadian rhythm regulation in aging models.</div>
-        <div class="product-footer"><div><div class="product-price">$54.99</div><div class="product-sub-price">$46.74 subscribed</div></div></div>
+        <div class="product-footer"><div><div class="product-price">$54.99</div><div class="product-sub-price">$46.74 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="aging">
         <div class="product-badge badge-aging">Longevity</div>
         <div class="product-name">BeaCapra MOTS-C</div>
         <div class="product-size">10mg — Lyophilized</div>
         <div class="product-desc">Mitochondrial-derived peptide. Research focuses on cellular energy metabolism, insulin sensitivity, and exercise-mimetic effects.</div>
-        <div class="product-footer"><div><div class="product-price">$69.99</div><div class="product-sub-price">$59.49 subscribed</div></div></div>
+        <div class="product-footer"><div><div class="product-price">$69.99</div><div class="product-sub-price">$59.49 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="aging">
         <div class="product-badge badge-aging">Cellular Energy</div>
         <div class="product-name">BeaCapra NAD+</div>
         <div class="product-size">500mg — Lyophilized</div>
-        <div class="product-desc">Nicotinamide adenine dinucleotide. Essential coenzyme in cellular energy metabolism. Researched for age-related NAD+ decline and sirtuins activation.</div>
-        <div class="product-footer"><div><div class="product-price">$99.99</div><div class="product-sub-price">$84.99 subscribed</div></div></div>
+        <div class="product-desc">Nicotinamide adenine dinucleotide. Essential coenzyme in cellular energy metabolism. Researched for age-related NAD+ decline.</div>
+        <div class="product-footer"><div><div class="product-price">$99.99</div><div class="product-sub-price">$84.99 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
-      <!-- GROWTH HORMONE -->
       <div class="product-card" data-cat="growth">
         <div class="product-badge badge-growth">Growth Hormone</div>
         <div class="product-name">BeaCapra Sermorelin</div>
         <div class="product-size">5mg — Lyophilized</div>
         <div class="product-desc">GHRH(1-29) analogue. The first FDA-studied growth hormone releasing peptide. Researched for pulsatile GH release stimulation.</div>
-        <div class="product-footer"><div><div class="product-price">$59.99</div><div class="product-sub-price">$50.99 subscribed</div></div></div>
+        <div class="product-footer"><div><div class="product-price">$59.99</div><div class="product-sub-price">$50.99 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="growth">
         <div class="product-badge badge-growth">Growth Hormone</div>
         <div class="product-name">BeaCapra CJC-1295 DAC</div>
         <div class="product-size">5mg — Lyophilized</div>
         <div class="product-desc">Modified GHRH with Drug Affinity Complex. Extended half-life enables sustained GH elevation. Researched for GH/IGF-1 axis modulation.</div>
-        <div class="product-footer"><div><div class="product-price">$64.99</div><div class="product-sub-price">$55.24 subscribed</div></div></div>
+        <div class="product-footer"><div><div class="product-price">$64.99</div><div class="product-sub-price">$55.24 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="growth">
         <div class="product-badge badge-growth">Growth Hormone</div>
         <div class="product-name">BeaCapra Ipamorelin</div>
         <div class="product-size">5mg — Lyophilized</div>
-        <div class="product-desc">Selective ghrelin receptor agonist. Stimulates GH release without affecting cortisol, prolactin, or ACTH. Cleanest GH secretagogue profile.</div>
-        <div class="product-footer"><div><div class="product-price">$49.99</div><div class="product-sub-price">$42.49 subscribed</div></div></div>
+        <div class="product-desc">Selective ghrelin receptor agonist. Stimulates GH release without affecting cortisol, prolactin, or ACTH. Cleanest GH secretagogue.</div>
+        <div class="product-footer"><div><div class="product-price">$49.99</div><div class="product-sub-price">$42.49 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="growth">
         <div class="product-badge badge-growth">Growth Hormone</div>
         <div class="product-name">BeaCapra Tesamorelin</div>
         <div class="product-size">5mg — Lyophilized</div>
-        <div class="product-desc">Synthetic GHRH analogue. The only FDA-approved GHRH peptide (for lipodystrophy). Researched for visceral fat reduction and GH optimization.</div>
-        <div class="product-footer"><div><div class="product-price">$74.99</div><div class="product-sub-price">$63.74 subscribed</div></div></div>
+        <div class="product-desc">Synthetic GHRH analogue. The only FDA-approved GHRH peptide. Researched for visceral fat reduction and GH optimization.</div>
+        <div class="product-footer"><div><div class="product-price">$74.99</div><div class="product-sub-price">$63.74 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
-      <!-- COGNITIVE -->
       <div class="product-card" data-cat="cognitive">
         <div class="product-badge badge-cognitive">Cognitive</div>
         <div class="product-name">BeaCapra Semax</div>
         <div class="product-size">10mg — Lyophilized</div>
-        <div class="product-desc">Synthetic ACTH(4-10) analogue. Developed in Russia and extensively studied for neuroprotective and nootropic properties. BDNF modulation.</div>
-        <div class="product-footer"><div><div class="product-price">$44.99</div><div class="product-sub-price">$38.24 subscribed</div></div></div>
+        <div class="product-desc">Synthetic ACTH(4-10) analogue. Extensively studied for neuroprotective and nootropic properties. BDNF modulation research.</div>
+        <div class="product-footer"><div><div class="product-price">$44.99</div><div class="product-sub-price">$38.24 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="cognitive">
         <div class="product-badge badge-cognitive">Cognitive</div>
         <div class="product-name">BeaCapra Selank</div>
         <div class="product-size">10mg — Lyophilized</div>
-        <div class="product-desc">Synthetic tuftsin analogue. Researched for anxiolytic properties, immune modulation, and cognitive function enhancement without sedative effects.</div>
-        <div class="product-footer"><div><div class="product-price">$44.99</div><div class="product-sub-price">$38.24 subscribed</div></div></div>
+        <div class="product-desc">Synthetic tuftsin analogue. Researched for anxiolytic properties, immune modulation, and cognitive enhancement without sedation.</div>
+        <div class="product-footer"><div><div class="product-price">$44.99</div><div class="product-sub-price">$38.24 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="cognitive">
         <div class="product-badge badge-cognitive">Cognitive</div>
         <div class="product-name">BeaCapra Dihexa</div>
         <div class="product-size">10mg — Lyophilized</div>
-        <div class="product-desc">Angiotensin IV analogue. Researched for profound HGF/MET receptor activation and synaptogenesis. Emerging cognitive enhancement compound.</div>
-        <div class="product-footer"><div><div class="product-price">$64.99</div><div class="product-sub-price">$55.24 subscribed</div></div></div>
+        <div class="product-desc">Angiotensin IV analogue. Researched for HGF/MET receptor activation and synaptogenesis. Emerging cognitive compound.</div>
+        <div class="product-footer"><div><div class="product-price">$64.99</div><div class="product-sub-price">$55.24 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
-      <!-- WEIGHT -->
       <div class="product-card" data-cat="weight">
-        <div class="product-badge" style="background: rgba(236,72,153,0.15); color: #ec4899;">Weight</div>
+        <div class="product-badge badge-weight">Weight</div>
         <div class="product-name">BeaCapra PT-141</div>
         <div class="product-size">10mg — Lyophilized</div>
-        <div class="product-desc">Bremelanotide. Melanocortin receptor agonist. The first and only FDA-approved peptide for hypoactive sexual desire. MC3R/MC4R pathway research.</div>
-        <div class="product-footer"><div><div class="product-price">$54.99</div><div class="product-sub-price">$46.74 subscribed</div></div></div>
+        <div class="product-desc">Bremelanotide. Melanocortin receptor agonist. The first FDA-approved peptide for hypoactive sexual desire. MC3R/MC4R pathway.</div>
+        <div class="product-footer"><div><div class="product-price">$54.99</div><div class="product-sub-price">$46.74 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="weight">
-        <div class="product-badge" style="background: rgba(236,72,153,0.15); color: #ec4899;">Weight</div>
+        <div class="product-badge badge-weight">Weight</div>
         <div class="product-name">BeaCapra Retatrutide</div>
         <div class="product-size">10mg — Lyophilized</div>
-        <div class="product-desc">Triple agonist: GLP-1, GIP, and glucagon receptors. Researched for its unprecedented multi-pathway approach to metabolic function.</div>
-        <div class="product-footer"><div><div class="product-price">$89.99</div><div class="product-sub-price">$76.49 subscribed</div></div></div>
+        <div class="product-desc">Triple agonist: GLP-1, GIP, and glucagon receptors. Unprecedented multi-pathway approach to metabolic function research.</div>
+        <div class="product-footer"><div><div class="product-price">$89.99</div><div class="product-sub-price">$76.49 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="weight">
-        <div class="product-badge" style="background: rgba(236,72,153,0.15); color: #ec4899;">Weight</div>
+        <div class="product-badge badge-weight">Weight</div>
         <div class="product-name">BeaCapra AOD-9604</div>
         <div class="product-size">5mg — Lyophilized</div>
-        <div class="product-desc">Human growth hormone fragment (176-191). Researched for lipolytic properties without the proliferative effects of full-length HGH.</div>
-        <div class="product-footer"><div><div class="product-price">$44.99</div><div class="product-sub-price">$38.24 subscribed</div></div></div>
+        <div class="product-desc">HGH fragment (176-191). Researched for lipolytic properties without the proliferative effects of full-length HGH.</div>
+        <div class="product-footer"><div><div class="product-price">$44.99</div><div class="product-sub-price">$38.24 subscribed</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
-      <!-- STACKS -->
       <div class="product-card" data-cat="stack">
         <div class="product-badge badge-stack">Stack · Best Seller</div>
         <div class="product-name">BeaCapra Healing Stack</div>
         <div class="product-size">BPC-157 10mg + TB-500 10mg</div>
-        <div class="product-desc">The two most-researched healing peptides. Synergistic protocols studied across muscle, tendon, ligament, and gut tissue types.</div>
-        <div class="product-footer"><div><div class="product-price">$139.99</div><div class="product-sub-price">$111.99 subscribed — Save 20%</div></div></div>
+        <div class="product-desc">The two most-researched healing peptides. Synergistic protocols across muscle, tendon, ligament, and gut tissue types.</div>
+        <div class="product-footer"><div><div class="product-price">$139.99</div><div class="product-sub-price">$111.99 subscribed — Save 20%</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="stack">
         <div class="product-badge badge-stack">Stack</div>
         <div class="product-name">BeaCapra Longevity Stack</div>
         <div class="product-size">MOTS-C + Epithalon + NAD+</div>
         <div class="product-desc">Three longevity pathways: mitochondrial function (MOTS-C), telomere maintenance (Epithalon), and cellular energy (NAD+).</div>
-        <div class="product-footer"><div><div class="product-price">$199.99</div><div class="product-sub-price">$159.99 subscribed — Save 20%</div></div></div>
+        <div class="product-footer"><div><div class="product-price">$199.99</div><div class="product-sub-price">$159.99 subscribed — Save 20%</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="stack">
         <div class="product-badge badge-stack">Stack</div>
         <div class="product-name">BeaCapra GH Performance Stack</div>
         <div class="product-size">CJC-1295 + Ipamorelin + Sermorelin</div>
-        <div class="product-desc">Triple-action GH secretagogue protocol. Sustained release (CJC-1295), selective pulsing (Ipamorelin), and foundational GHRH (Sermorelin).</div>
-        <div class="product-footer"><div><div class="product-price">$149.99</div><div class="product-sub-price">$119.99 subscribed — Save 20%</div></div></div>
+        <div class="product-desc">Triple-action GH secretagogue protocol. Sustained release, selective pulsing, and foundational GHRH combined.</div>
+        <div class="product-footer"><div><div class="product-price">$149.99</div><div class="product-sub-price">$119.99 subscribed — Save 20%</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="stack">
         <div class="product-badge badge-stack">Stack</div>
         <div class="product-name">BeaCapra Brain Stack</div>
         <div class="product-size">Semax 10mg + Selank 10mg</div>
-        <div class="product-desc">Dual nootropic protocol. Semax for BDNF-driven neuroplasticity, Selank for anxiolytic balance. Complementary cognitive pathways.</div>
-        <div class="product-footer"><div><div class="product-price">$74.99</div><div class="product-sub-price">$59.99 subscribed — Save 20%</div></div></div>
+        <div class="product-desc">Dual nootropic protocol. Semax for BDNF-driven neuroplasticity, Selank for anxiolytic balance. Complementary pathways.</div>
+        <div class="product-footer"><div><div class="product-price">$74.99</div><div class="product-sub-price">$59.99 subscribed — Save 20%</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="stack">
         <div class="product-badge badge-stack">Stack</div>
         <div class="product-name">BeaCapra Recovery Pro Stack</div>
         <div class="product-size">BPC-157 + TB-500 + GHK-Cu</div>
         <div class="product-desc">Three healing pathways: internal tissue repair (BPC-157), cell migration (TB-500), and collagen synthesis (GHK-Cu).</div>
-        <div class="product-footer"><div><div class="product-price">$149.99</div><div class="product-sub-price">$119.99 subscribed — Save 20%</div></div></div>
+        <div class="product-footer"><div><div class="product-price">$149.99</div><div class="product-sub-price">$119.99 subscribed — Save 20%</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
       <div class="product-card" data-cat="stack">
         <div class="product-badge badge-stack">Stack</div>
         <div class="product-name">BeaCapra Total Optimization Stack</div>
         <div class="product-size">BPC-157 + GHK-Cu + MOTS-C + Semax</div>
-        <div class="product-desc">Four compounds across healing, skin, longevity, and cognition. The comprehensive multi-system protocol for serious researchers.</div>
-        <div class="product-footer"><div><div class="product-price">$179.99</div><div class="product-sub-price">$143.99 subscribed — Save 20%</div></div></div>
+        <div class="product-desc">Four compounds across healing, skin, longevity, and cognition. The comprehensive multi-system protocol.</div>
+        <div class="product-footer"><div><div class="product-price">$179.99</div><div class="product-sub-price">$143.99 subscribed — Save 20%</div></div><span class="product-explore">Explore Formula →</span></div>
       </div>
     </div>
   </div>
 </section>
 
+<div class="section-divider"></div>
+
 <!-- ═══ SUBSCRIBE & SAVE ═══ -->
 <section class="section" id="subscribe">
-  <div class="section-inner">
+  <div class="section-inner reveal">
     <div class="sub-grid">
       <div>
-        <div class="section-eyebrow">Subscribe &amp; Save</div>
+        <div class="section-eyebrow">Subscribe & Save</div>
         <h2 class="section-title" style="text-align:left; margin-bottom: 1rem;">The Only Peptide Subscription in the Industry</h2>
-        <p style="color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.65;">Research protocols run in cycles. Your supply shouldn't run out. BeaCapra is the first and only research peptide supplier offering automated subscribe &amp; save — so your compounds arrive on schedule, every time.</p>
+        <p style="color: var(--muted); margin-bottom: 2rem; line-height: 1.7;">Research protocols run in cycles. Your supply shouldn't run out. BeaCapra is the first and only research peptide supplier offering automated subscribe & save.</p>
         <div class="sub-features">
           <div class="sub-feature">
-            <div class="sub-feature-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-            </div>
-            <div>
-              <div class="sub-feature-title">Save 15% on Every Order</div>
-              <div class="sub-feature-desc">20% off bundles. Locked in for the life of your subscription.</div>
-            </div>
+            <div class="sub-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+            <div><div class="sub-feature-title">Save 15% on Every Order</div><div class="sub-feature-desc">20% off bundles. Locked in for the life of your subscription.</div></div>
           </div>
           <div class="sub-feature">
-            <div class="sub-feature-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            </div>
-            <div>
-              <div class="sub-feature-title">Choose Your Frequency</div>
-              <div class="sub-feature-desc">Every 30, 60, or 90 days. Adjust anytime from your account.</div>
-            </div>
+            <div class="sub-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <div><div class="sub-feature-title">Choose Your Frequency</div><div class="sub-feature-desc">Every 30, 60, or 90 days. Adjust anytime from your account.</div></div>
           </div>
           <div class="sub-feature">
-            <div class="sub-feature-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 15l-5.88 3.09 1.12-6.54L.49 7.09l6.57-.96L10 .26l2.94 5.87 6.57.96-4.75 4.46 1.12 6.54z"/></svg>
-            </div>
-            <div>
-              <div class="sub-feature-title">Skip, Pause, or Swap</div>
-              <div class="sub-feature-desc">Full control. Too much? Skip. Want to try something new? Swap. Need a break? Pause.</div>
-            </div>
+            <div class="sub-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 15l-5.88 3.09 1.12-6.54L.49 7.09l6.57-.96L10 .26l2.94 5.87 6.57.96-4.75 4.46 1.12 6.54z"/></svg></div>
+            <div><div class="sub-feature-title">Skip, Pause, or Swap</div><div class="sub-feature-desc">Full control. Too much? Skip. Want to try something new? Swap. Need a break? Pause.</div></div>
           </div>
           <div class="sub-feature">
-            <div class="sub-feature-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-            </div>
-            <div>
-              <div class="sub-feature-title">Free Shipping on Subscriptions</div>
-              <div class="sub-feature-desc">Every subscription order ships free. No minimum required.</div>
-            </div>
+            <div class="sub-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></div>
+            <div><div class="sub-feature-title">Free Shipping on Subscriptions</div><div class="sub-feature-desc">Every subscription order ships free. No minimum required.</div></div>
           </div>
         </div>
       </div>
@@ -2010,26 +1791,11 @@
         <div class="sub-card-title">Healing Stack — Subscribed</div>
         <div class="sub-card-desc">BPC-157 10mg + TB-500 10mg delivered every 30 days. The most-researched healing protocol, on autopilot.</div>
         <ul class="sub-benefits">
-          <li>
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg>
-            Save 20% — $111.99/delivery
-          </li>
-          <li>
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg>
-            Free shipping on every order
-          </li>
-          <li>
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg>
-            Per-batch COA with every shipment
-          </li>
-          <li>
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg>
-            Cancel, skip, or swap anytime
-          </li>
-          <li>
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg>
-            Priority support for subscribers
-          </li>
+          <li><svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg>Save 20% — $111.99/delivery</li>
+          <li><svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg>Free shipping on every order</li>
+          <li><svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg>Per-batch COA with every shipment</li>
+          <li><svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg>Cancel, skip, or swap anytime</li>
+          <li><svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg>Priority support for subscribers</li>
         </ul>
         <a href="#" class="btn btn-primary">Subscribe — $111.99/mo</a>
       </div>
@@ -2037,100 +1803,60 @@
   </div>
 </section>
 
-<!-- ═══ HOW IT WORKS ═══ -->
-<section class="section section-alt">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-eyebrow">How It Works</div>
-      <h2 class="section-title">From Our Lab to Your Door</h2>
-    </div>
-    <div class="how-grid">
-      <div class="how-step">
-        <div class="how-number">Step 01</div>
-        <div class="how-title">Choose Your Compounds</div>
-        <div class="how-desc">Browse our catalog of 24 independently tested research peptides. Select one-time purchase or subscribe &amp; save for 15-20% off.</div>
-      </div>
-      <div class="how-step">
-        <div class="how-number">Step 02</div>
-        <div class="how-title">We Test &amp; Ship</div>
-        <div class="how-desc">Every batch is verified via HPLC and mass spectrometry by independent US labs. Your COA ships with your order. Same-day processing on orders before 2PM EST.</div>
-      </div>
-      <div class="how-step">
-        <div class="how-number">Step 03</div>
-        <div class="how-title">Review Your Documentation</div>
-        <div class="how-desc">Each shipment includes batch-specific certificates of analysis, storage instructions, and compound specifications. Full documentation for your research records.</div>
-      </div>
-      <div class="how-step">
-        <div class="how-number">Step 04</div>
-        <div class="how-title">Reorder on Your Schedule</div>
-        <div class="how-desc">Subscribers get automatic deliveries. Manage frequency, skip, swap, or pause from your account dashboard. One-time buyers reorder when ready.</div>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="section-divider"></div>
 
 <!-- ═══ QUALITY & SCIENCE ═══ -->
-<section class="section section-dark" id="science">
-  <div class="section-inner">
+<section class="section" id="science">
+  <div class="section-inner reveal">
     <div class="section-header">
-      <div class="section-eyebrow">Quality &amp; Documentation</div>
+      <div class="section-eyebrow">Quality & Documentation</div>
       <h2 class="section-title">Every Batch. Every Time.</h2>
-      <p class="section-sub">Trust isn't a marketing claim. It's lot-specific analytical data you can verify. Here's how we ensure every compound meets our standards.</p>
+      <p class="section-sub">Trust isn't a marketing claim. It's lot-specific analytical data you can verify.</p>
     </div>
     <div class="quality-grid">
       <div class="quality-card">
-        <div class="quality-card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        </div>
+        <div class="quality-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
         <div class="quality-card-title">Per-Batch COAs</div>
-        <div class="quality-card-desc">Every production lot is individually tested. Not a generic report reused across shipments — your COA matches your vial's lot number.</div>
+        <div class="quality-card-desc">Every production lot individually tested. Your COA matches your vial's lot number — not a generic report reused across shipments.</div>
       </div>
       <div class="quality-card">
-        <div class="quality-card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        </div>
+        <div class="quality-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
         <div class="quality-card-title">HPLC Analysis</div>
-        <div class="quality-card-desc">High-Performance Liquid Chromatography confirms purity exceeds 99%. The industry standard for peptide identity and concentration verification.</div>
+        <div class="quality-card-desc">High-Performance Liquid Chromatography confirms purity exceeds 99%. The industry standard for peptide identity verification.</div>
       </div>
       <div class="quality-card">
-        <div class="quality-card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-        </div>
+        <div class="quality-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
         <div class="quality-card-title">Mass Spectrometry</div>
-        <div class="quality-card-desc">LC-MS confirms molecular identity — not just purity, but that the compound is exactly what it claims to be. Eliminates substitution risk.</div>
+        <div class="quality-card-desc">LC-MS confirms molecular identity — not just purity, but that the compound is exactly what it claims to be.</div>
       </div>
       <div class="quality-card">
-        <div class="quality-card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
+        <div class="quality-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <div class="quality-card-title">Independent US Labs</div>
-        <div class="quality-card-desc">Testing is performed by third-party analytical laboratories in the United States. We never self-certify. Reports include lab identity, methods, and date.</div>
+        <div class="quality-card-desc">Third-party analytical laboratories in the United States. We never self-certify. Full lab identity, methods, and date on every report.</div>
       </div>
       <div class="quality-card">
-        <div class="quality-card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
+        <div class="quality-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
         <div class="quality-card-title">Lot Traceability</div>
-        <div class="quality-card-desc">Every vial carries a lot number linking it to its specific production batch, synthesis source, testing date, and analytical report. Full chain of documentation.</div>
+        <div class="quality-card-desc">Every vial links to its production batch, synthesis source, testing date, and report. Full chain of documentation.</div>
       </div>
       <div class="quality-card">
-        <div class="quality-card-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 00-8 0v2"/></svg>
-        </div>
-        <div class="quality-card-title">Proper Storage &amp; Handling</div>
-        <div class="quality-card-desc">Lyophilized compounds ship in temperature-controlled packaging. Cold packs included during summer months. Storage specifications on every label.</div>
+        <div class="quality-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 00-8 0v2"/></svg></div>
+        <div class="quality-card-title">Proper Storage & Handling</div>
+        <div class="quality-card-desc">Temperature-controlled packaging with cold packs during summer. Storage specs on every label.</div>
       </div>
     </div>
   </div>
 </section>
 
+<div class="section-divider"></div>
+
 <!-- ═══ RECONSTITUTION CALCULATOR ═══ -->
-<section class="section section-dark" id="calculator">
-  <div class="section-inner">
+<section class="section" id="calculator">
+  <div class="section-inner reveal">
     <div class="section-header">
       <div class="section-eyebrow">Research Tools</div>
       <h2 class="section-title">Reconstitution Calculator</h2>
-      <p class="section-sub">Calculate your peptide concentration and dosing volume. Enter your vial size and preferred solvent volume below.</p>
+      <p class="section-sub">Calculate your peptide concentration and dosing volume.</p>
     </div>
     <div class="calc-container">
       <div class="calc-form">
@@ -2169,125 +1895,48 @@
       </div>
       <div class="calc-result">
         <div class="calc-result-title">Your Calculation</div>
-        <div class="calc-result-row">
-          <span class="calc-result-label">Concentration</span>
-          <span class="calc-result-value" id="resultConcentration">5,000 mcg/mL</span>
-        </div>
-        <div class="calc-result-row">
-          <span class="calc-result-label">Volume Per Dose</span>
-          <span class="calc-result-value highlight" id="resultVolume">0.05 mL</span>
-        </div>
-        <div class="calc-result-row">
-          <span class="calc-result-label">Syringe Units</span>
-          <span class="calc-result-value highlight" id="resultUnits">5 units</span>
-        </div>
-        <div class="calc-result-row">
-          <span class="calc-result-label">Doses Per Vial</span>
-          <span class="calc-result-value" id="resultDoses">40 doses</span>
-        </div>
-        <div class="calc-result-row">
-          <span class="calc-result-label">Cost Per Dose</span>
-          <span class="calc-result-value" id="resultCost">~$1.87</span>
-        </div>
+        <div class="calc-result-row"><span class="calc-result-label">Concentration</span><span class="calc-result-value" id="resultConcentration">5,000 mcg/mL</span></div>
+        <div class="calc-result-row"><span class="calc-result-label">Volume Per Dose</span><span class="calc-result-value highlight" id="resultVolume">0.05 mL</span></div>
+        <div class="calc-result-row"><span class="calc-result-label">Syringe Units</span><span class="calc-result-value highlight" id="resultUnits">5 units</span></div>
+        <div class="calc-result-row"><span class="calc-result-label">Doses Per Vial</span><span class="calc-result-value" id="resultDoses">40 doses</span></div>
+        <div class="calc-result-row"><span class="calc-result-label">Cost Per Dose</span><span class="calc-result-value" id="resultCost">~$1.87</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ WHY IMCAPRA — COMPARISON ═══ -->
+<div class="section-divider"></div>
+
+<!-- ═══ COMPARISON TABLE ═══ -->
 <section class="section">
-  <div class="section-inner">
+  <div class="section-inner reveal">
     <div class="section-header">
       <div class="section-eyebrow">Why BeaCapra</div>
       <h2 class="section-title">How We Compare</h2>
-      <p class="section-sub">We built BeaCapra to be the supplier we wished existed. Here's how we stack up against the rest of the industry.</p>
+      <p class="section-sub">We built BeaCapra to be the supplier we wished existed.</p>
     </div>
     <div class="compare-table-wrap">
       <table class="compare-table">
-        <thead>
-          <tr>
-            <th>Feature</th>
-            <th>BeaCapra</th>
-            <th>PS Peptides</th>
-            <th>Core Peptides</th>
-            <th>Swiss Chems</th>
-            <th>Industry Avg</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Feature</th><th>BeaCapra</th><th>PS Peptides</th><th>Core Peptides</th><th>Swiss Chems</th><th>Industry Avg</th></tr></thead>
         <tbody>
-          <tr class="compare-highlight">
-            <td>Subscribe &amp; Save</td>
-            <td class="check-yes">15-20% Off</td>
-            <td class="check-no">No</td>
-            <td class="check-no">No</td>
-            <td class="check-no">No</td>
-            <td class="check-no">None offer</td>
-          </tr>
-          <tr>
-            <td>Per-Batch COAs</td>
-            <td class="check-yes">Every lot</td>
-            <td class="check-yes">Yes</td>
-            <td class="check-yes">Yes</td>
-            <td>Limited</td>
-            <td>Varies</td>
-          </tr>
-          <tr>
-            <td>HPLC + Mass Spec</td>
-            <td class="check-yes">Both</td>
-            <td class="check-yes">Both</td>
-            <td class="check-yes">Both</td>
-            <td>HPLC only</td>
-            <td>HPLC only</td>
-          </tr>
-          <tr class="compare-highlight">
-            <td>Free Shipping (Subs)</td>
-            <td class="check-yes">All orders</td>
-            <td class="check-no">$200+</td>
-            <td class="check-no">$150+</td>
-            <td class="check-no">$100+</td>
-            <td>$150+</td>
-          </tr>
-          <tr>
-            <td>Skip / Pause / Swap</td>
-            <td class="check-yes">Full control</td>
-            <td class="check-no">N/A</td>
-            <td class="check-no">N/A</td>
-            <td class="check-no">N/A</td>
-            <td class="check-no">N/A</td>
-          </tr>
-          <tr>
-            <td>Curated Stacks</td>
-            <td class="check-yes">6 stacks</td>
-            <td>Custom only</td>
-            <td>Limited</td>
-            <td class="check-yes">Yes</td>
-            <td>Rare</td>
-          </tr>
-          <tr>
-            <td>Research Blog</td>
-            <td class="check-yes">100+ posts</td>
-            <td class="check-yes">Extensive</td>
-            <td>Minimal</td>
-            <td>Some</td>
-            <td>Sparse</td>
-          </tr>
-          <tr class="compare-highlight">
-            <td>Affiliate Program</td>
-            <td class="check-yes">15-25%</td>
-            <td class="check-no">No</td>
-            <td class="check-no">No</td>
-            <td class="check-yes">Yes</td>
-            <td>Rare</td>
-          </tr>
+          <tr class="compare-highlight"><td>Subscribe & Save</td><td class="check-yes">15-20% Off</td><td class="check-no">No</td><td class="check-no">No</td><td class="check-no">No</td><td class="check-no">None offer</td></tr>
+          <tr><td>Per-Batch COAs</td><td class="check-yes">Every lot</td><td class="check-yes">Yes</td><td class="check-yes">Yes</td><td>Limited</td><td>Varies</td></tr>
+          <tr><td>HPLC + Mass Spec</td><td class="check-yes">Both</td><td class="check-yes">Both</td><td class="check-yes">Both</td><td>HPLC only</td><td>HPLC only</td></tr>
+          <tr class="compare-highlight"><td>Free Shipping (Subs)</td><td class="check-yes">All orders</td><td class="check-no">$200+</td><td class="check-no">$150+</td><td class="check-no">$100+</td><td>$150+</td></tr>
+          <tr><td>Skip / Pause / Swap</td><td class="check-yes">Full control</td><td class="check-no">N/A</td><td class="check-no">N/A</td><td class="check-no">N/A</td><td class="check-no">N/A</td></tr>
+          <tr><td>Curated Stacks</td><td class="check-yes">6 stacks</td><td>Custom only</td><td>Limited</td><td class="check-yes">Yes</td><td>Rare</td></tr>
+          <tr class="compare-highlight"><td>Affiliate Program</td><td class="check-yes">15-25%</td><td class="check-no">No</td><td class="check-no">No</td><td class="check-yes">Yes</td><td>Rare</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
+<div class="section-divider"></div>
+
 <!-- ═══ REVIEWS ═══ -->
-<section class="section section-dark">
-  <div class="section-inner">
+<section class="section">
+  <div class="section-inner reveal">
     <div class="section-header">
       <div class="section-eyebrow">Social Proof</div>
       <h2 class="section-title">What Researchers Are Saying</h2>
@@ -2296,151 +1945,88 @@
       <div class="review-card">
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <div class="review-text">"Finally, a peptide supplier that treats this like a real business. Per-batch COAs, subscription model, and the packaging is on another level. Switched from PS and never looking back."</div>
-        <div class="review-author">
-          <div class="review-avatar">M.R.</div>
-          <div>
-            <div class="review-name">M. Rodriguez</div>
-            <div class="review-badge">Verified Subscriber</div>
-          </div>
-        </div>
+        <div class="review-author"><div class="review-avatar">MR</div><div><div class="review-name">M. Rodriguez</div><div class="review-badge">Verified Subscriber</div></div></div>
       </div>
       <div class="review-card">
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="review-text">"The subscribe and save is a game-changer. My BPC-157 and TB-500 arrive every 30 days without me thinking about it. Purity verified at 99.4% on the included COA. This is how it should be."</div>
-        <div class="review-author">
-          <div class="review-avatar">J.K.</div>
-          <div>
-            <div class="review-name">J. Kim</div>
-            <div class="review-badge">Verified Subscriber</div>
-          </div>
-        </div>
+        <div class="review-text">"The subscribe and save is a game-changer. My BPC-157 and TB-500 arrive every 30 days without me thinking about it. Purity verified at 99.4% on the included COA."</div>
+        <div class="review-author"><div class="review-avatar">JK</div><div><div class="review-name">J. Kim</div><div class="review-badge">Verified Subscriber</div></div></div>
       </div>
       <div class="review-card">
         <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="review-text">"Ordered the Longevity Stack on subscription. MOTS-C, Epithalon, and NAD+ all arrived with individual batch COAs. 20% off the stack price plus free shipping. No one else does this."</div>
-        <div class="review-author">
-          <div class="review-avatar">A.T.</div>
-          <div>
-            <div class="review-name">A. Thompson</div>
-            <div class="review-badge">Verified Purchase</div>
-          </div>
-        </div>
+        <div class="review-text">"Ordered the Longevity Stack on subscription. MOTS-C, Epithalon, and NAD+ all arrived with individual batch COAs. 20% off plus free shipping. No one else does this."</div>
+        <div class="review-author"><div class="review-avatar">AT</div><div><div class="review-name">A. Thompson</div><div class="review-badge">Verified Purchase</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ WHAT IS IMCAPRA ═══ -->
-<section class="section">
-  <div class="section-inner">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; max-width: 1000px; margin: 0 auto;">
+<div class="section-divider"></div>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="section" id="about">
+  <div class="section-inner reveal">
+    <div class="about-grid">
       <div>
         <div class="section-eyebrow">The Name</div>
         <h2 class="section-title" style="text-align: left;">What Is BeaCapra?</h2>
-        <div style="font-size: 1rem; color: var(--text-secondary); line-height: 1.75;">
-          <p><strong style="color: var(--text); font-size: 1.15rem;">Bea Capra.</strong> <em>Capra</em> is Latin for goat — the animal that climbs where others can't, that thrives in conditions that break everything else. The mountain goat doesn't take the easy path. It takes the <em>highest</em> one.</p>
-          <p><strong style="color: var(--accent-text);">Be the GOAT.</strong> Greatest Of All Time isn't given. It's built — one decision, one protocol, one day at a time. BeaCapra exists because the tools you use to build yourself should be as uncompromising as the standard you hold yourself to.</p>
+        <div style="color: var(--muted); line-height: 1.8;">
+          <p><strong style="color: var(--white); font-size: 1.1rem;">Bea Capra.</strong> <em>Capra</em> is Latin for goat — the animal that climbs where others can't, that thrives in conditions that break everything else.</p>
+          <p><strong class="gradient-text" style="font-size: 1.05rem;">Be the GOAT.</strong> Greatest Of All Time isn't given. It's built — one protocol, one decision, one day at a time.</p>
           <p>Every compound is independently verified. Every subscription ships on time. Every COA is published — because transparency isn't a feature, it's the floor.</p>
-          <p style="font-weight: 600; color: var(--text); font-size: 1.05rem;">Be the GOAT of you.</p>
         </div>
       </div>
-      <div style="border-radius: var(--radius-lg); overflow: hidden;">
-        <img src="unboxing.png" alt="BeaCapra premium packaging with peptide vials and documentation" style="width: 100%; display: block; border-radius: var(--radius-lg);">
-      </div>
+      <img src="unboxing.png" alt="BeaCapra premium packaging">
     </div>
   </div>
 </section>
 
-<!-- ═══ BLOG PREVIEW ═══ -->
-<section class="section section-alt" id="blog">
-  <div class="section-inner">
+<div class="section-divider"></div>
+
+<!-- ═══ BLOG ═══ -->
+<section class="section" id="blog">
+  <div class="section-inner reveal">
     <div class="section-header">
       <div class="section-eyebrow">Research Library</div>
       <h2 class="section-title">Learn</h2>
-      <p class="section-sub">Evidence-based guides, compound comparisons, and research updates. No hype. No health claims. Just the science.</p>
+      <p class="section-sub">Evidence-based guides, compound comparisons, and research updates.</p>
     </div>
     <div class="blog-grid">
       <a class="blog-card">
         <div class="blog-img" style="background-image: url('/beacapra-site/lab-hplc.png');"></div>
-        <div class="blog-body">
-          <div class="blog-tag">Education</div>
-          <div class="blog-title">What Are Peptides? A Complete Guide for 2026</div>
-          <div class="blog-excerpt">Everything you need to understand about peptide chemistry, classifications, and why researchers are paying attention.</div>
-        </div>
+        <div class="blog-body"><div class="blog-tag">Education</div><div class="blog-title">What Are Peptides? A Complete Guide for 2026</div><div class="blog-excerpt">Everything you need to understand about peptide chemistry, classifications, and why researchers are paying attention.</div></div>
       </a>
       <a class="blog-card">
         <div class="blog-img" style="background-image: url('/beacapra-site/product-vial-coa.png');"></div>
-        <div class="blog-body">
-          <div class="blog-tag">Comparison</div>
-          <div class="blog-title">BPC-157 vs TB-500: Which Healing Peptide Is Right for Your Research?</div>
-          <div class="blog-excerpt">Two of the most-studied healing peptides compared: mechanism, research history, and how they work in combination.</div>
-        </div>
+        <div class="blog-body"><div class="blog-tag">Comparison</div><div class="blog-title">BPC-157 vs TB-500: Which Healing Peptide?</div><div class="blog-excerpt">Two of the most-studied healing peptides compared: mechanism, research history, and combination protocols.</div></div>
       </a>
       <a class="blog-card">
         <div class="blog-img" style="background-image: url('/beacapra-site/flatlay-vials.png');"></div>
-        <div class="blog-body">
-          <div class="blog-tag">Protocol</div>
-          <div class="blog-title">Understanding Peptide Purity: HPLC, Mass Spec, and Reading COAs</div>
-          <div class="blog-excerpt">A researcher's guide to interpreting certificates of analysis, understanding testing methods, and evaluating supplier quality.</div>
-        </div>
+        <div class="blog-body"><div class="blog-tag">Protocol</div><div class="blog-title">Understanding Peptide Purity: HPLC, Mass Spec & COAs</div><div class="blog-excerpt">A researcher's guide to interpreting certificates of analysis and evaluating supplier quality.</div></div>
       </a>
     </div>
-    <div style="text-align: center; margin-top: 2rem;">
-      <a href="#" class="btn btn-primary">View All Articles</a>
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="#" class="btn btn-outline">View All Articles</a>
     </div>
   </div>
 </section>
 
+<div class="section-divider"></div>
+
 <!-- ═══ FAQ ═══ -->
 <section class="section" id="faq">
-  <div class="section-inner">
+  <div class="section-inner reveal">
     <div class="section-header">
       <div class="section-eyebrow">Common Questions</div>
       <h2 class="section-title">Frequently Asked Questions</h2>
     </div>
     <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          What does "Research Use Only" mean?
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">All BeaCapra products are sold exclusively for laboratory and research purposes. They are not intended for human or veterinary use, and are not dietary supplements or drugs. By purchasing, you confirm that you are a qualified researcher and will use products in accordance with applicable laws and regulations.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          How does Subscribe &amp; Save work?
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Select "Subscribe &amp; Save" on any product page to save 15% on individual compounds or 20% on stacks. Choose your delivery frequency (every 30, 60, or 90 days). You can skip, pause, swap products, or cancel from your account dashboard at any time. Every subscription order ships free.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          What testing do you perform on each batch?
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">Every production batch undergoes independent third-party testing at US-based analytical labs. Testing includes High-Performance Liquid Chromatography (HPLC) for purity verification and Liquid Chromatography-Mass Spectrometry (LC-MS) for molecular identity confirmation. Batch-specific Certificates of Analysis ship with every order and are available in our COA library.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          How are your peptides stored and shipped?
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">All peptides are stored in temperature-controlled facilities. Orders ship in insulated packaging with cold packs during warm-weather months. Lyophilized (freeze-dried) peptides are stable at room temperature during standard 2-5 day transit. Upon receipt, store unopened vials at -20°C for long-term storage or 2-8°C for short-term use.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          What is your return and refund policy?
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">We stand behind the quality of our products. If your order arrives damaged, incorrect, or if testing reveals a purity discrepancy, we will replace or refund at no cost. Due to the nature of research compounds, we cannot accept returns on opened products. Contact support@beacapra.com within 14 days of delivery for any quality concerns.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          Do you ship internationally?
-          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer"><div class="faq-answer-inner">BeaCapra currently ships within the United States. International shipping availability depends on local regulations regarding research compounds. Check back for updates on expanded shipping regions, or contact us for specific country inquiries.</div></div>
-      </div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What does "Research Use Only" mean?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">All BeaCapra products are sold exclusively for laboratory and research purposes. They are not intended for human or veterinary use, and are not dietary supplements or drugs. By purchasing, you confirm that you are a qualified researcher and will use products in accordance with applicable laws.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How does Subscribe & Save work?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Select "Subscribe & Save" on any product to save 15% on individual compounds or 20% on stacks. Choose delivery every 30, 60, or 90 days. Skip, pause, swap, or cancel from your account dashboard anytime. Every subscription order ships free.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What testing do you perform on each batch?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">Every batch undergoes independent third-party testing at US-based labs. Testing includes HPLC for purity verification and LC-MS for molecular identity confirmation. Batch-specific COAs ship with every order.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How are peptides stored and shipped?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">All peptides ship in insulated packaging with cold packs during warm months. Lyophilized peptides are stable at room temperature during transit. Store at -20°C for long-term or 2-8°C for short-term use.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What is your return and refund policy?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">If your order arrives damaged, incorrect, or testing reveals a purity discrepancy, we replace or refund at no cost. Contact support@beacapra.com within 14 days of delivery.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Do you ship internationally?<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">BeaCapra currently ships within the United States. International availability depends on local regulations. Contact us for specific country inquiries.</div></div></div>
     </div>
   </div>
 </section>
@@ -2450,22 +2036,22 @@
   <div class="newsletter-inner">
     <div class="section-eyebrow" style="margin-bottom: 0.75rem;">Stay Informed</div>
     <h3>Get $20 Off Your First Subscription</h3>
-    <p>Join the BeaCapra research community. Compound updates, new product launches, and protocol guides — delivered to your inbox. No spam. Unsubscribe anytime.</p>
+    <p>Join the BeaCapra research community. Compound updates, new launches, and protocol guides delivered to your inbox.</p>
     <form class="newsletter-form" onsubmit="event.preventDefault()">
-      <input type="email" class="newsletter-input" placeholder="Enter your email" aria-label="Email address">
+      <input type="email" class="newsletter-input" placeholder="Enter your email" aria-label="Email address" id="nlEmail">
       <button type="submit" class="newsletter-btn">Subscribe</button>
     </form>
-    <div class="newsletter-legal">By subscribing you agree to our Privacy Policy. Your $20 credit will be emailed within 24 hours.</div>
+    <div class="newsletter-legal">By subscribing you agree to our Privacy Policy. $20 credit emailed within 24 hours.</div>
   </div>
 </section>
 
 <!-- ═══ AFFILIATE CTA ═══ -->
 <section class="section" id="affiliate">
   <div class="section-inner" style="max-width: 800px;">
-    <div class="cta-banner">
+    <div class="cta-banner reveal">
       <div class="section-eyebrow" style="margin-bottom: 0.75rem;">Affiliate Program</div>
       <h3>Earn 15-25% on Every Sale</h3>
-      <p>Join the BeaCapra affiliate network. Earn 15% per sale (up to 25% at Platinum tier), 10% recurring on subscriptions, 60-day cookie window. Get your unique code and start earning.</p>
+      <p>Join the BeaCapra affiliate network. 15% per sale (up to 25% at Platinum), 10% recurring on subscriptions, 60-day cookie window.</p>
       <a href="#" class="btn btn-primary">Apply to Become an Affiliate</a>
     </div>
   </div>
@@ -2473,40 +2059,34 @@
 
 <!-- ═══ RUO DISCLAIMER ═══ -->
 <div class="ruo-bar">
-  <p>All products sold by BeaCapra are intended for laboratory and research use only. They are not intended for human consumption, therapeutic, medical, or veterinary use. By purchasing from BeaCapra, you acknowledge that you are a qualified researcher and agree to our Terms of Service and Research Use Policy. BeaCapra does not provide medical advice. Consult with a qualified healthcare professional regarding any health concerns. These products have not been evaluated by the Food and Drug Administration.</p>
+  <p>All products sold by BeaCapra are intended for laboratory and research use only. They are not intended for human consumption, therapeutic, medical, or veterinary use. By purchasing from BeaCapra, you acknowledge that you are a qualified researcher and agree to our Terms of Service. These products have not been evaluated by the FDA.</p>
 </div>
 
 <!-- ═══ FOOTER ═══ -->
 <footer class="footer">
+  <div class="footer-orbital"></div>
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="nav-logo" style="display: inline-flex;">
-          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28" style="color: var(--text-on-dark)">
-            <path d="M16 4L10 9V14L6 18V26H12V20H20V26H26V18L22 14V9L16 4Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-            <path d="M16 4L12 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
-            <path d="M16 4L20 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
-          </svg>
-          <span class="nav-logo-text" style="color: var(--text-on-dark)">Bea<span>Capra</span></span>
-        </a>
-        <p>Research-grade peptides. Independently tested. The only subscribe &amp; save in the industry. Be the GOAT of you.</p>
+        <img src="beacapra-logo.jpeg" alt="BeaCapra" class="footer-brand-logo">
+        <p>Precision-grade research peptides. Independently tested. The only subscribe & save in the industry.</p>
       </div>
       <div>
         <div class="footer-col-title">Shop</div>
         <ul class="footer-links">
           <li><a href="#">All Peptides</a></li>
-          <li><a href="#">Healing &amp; Recovery</a></li>
+          <li><a href="#">Healing & Recovery</a></li>
           <li><a href="#">Anti-Aging</a></li>
           <li><a href="#">Growth Hormone</a></li>
           <li><a href="#">Cognitive</a></li>
-          <li><a href="#">Stacks &amp; Bundles</a></li>
+          <li><a href="#">Stacks & Bundles</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Company</div>
         <ul class="footer-links">
           <li><a href="#">About BeaCapra</a></li>
-          <li><a href="#">Quality &amp; Testing</a></li>
+          <li><a href="#">Quality & Testing</a></li>
           <li><a href="#">COA Library</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="#">Affiliate Program</a></li>
@@ -2528,62 +2108,115 @@
     <div class="footer-bottom">
       <span>&copy; 2026 BeaCapra. All rights reserved. For research use only.</span>
       <div class="footer-social">
-        <a href="#" aria-label="Instagram">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="#" aria-label="TikTok">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
-        </a>
-        <a href="#" aria-label="X / Twitter">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.7 16H20L8.3 4H4zM4 20L20 4"/></svg>
-        </a>
-        <a href="#" aria-label="YouTube">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="4"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>
-        </a>
+        <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg></a>
+        <a href="#" aria-label="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.7 16H20L8.3 4H4zM4 20L20 4"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="4"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg></a>
       </div>
     </div>
   </div>
 </footer>
 
 <script>
-function togglePurchase(el, isSubscribe) {
-  document.querySelectorAll('.toggle-option').forEach(b => b.classList.remove('active'));
-  el.classList.add('active');
-  const priceMain = document.getElementById('priceMain');
-  const priceOrig = document.getElementById('priceOrig');
-  const priceSave = document.getElementById('priceSave');
-  const freqSelector = document.getElementById('freqSelector');
-  if (isSubscribe) {
-    priceMain.textContent = '$63.74';
-    priceOrig.textContent = '$74.99';
-    priceOrig.hidden = false;
-    priceSave.hidden = false;
-    freqSelector.hidden = false;
-  } else {
-    priceMain.textContent = '$74.99';
-    priceOrig.hidden = true;
-    priceSave.hidden = true;
-    freqSelector.hidden = true;
+// ── PARTICLE CANVAS ──
+(function() {
+  const canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let particles = [];
+  let w, h, animId;
+
+  function resize() {
+    w = canvas.width = canvas.offsetWidth;
+    h = canvas.height = canvas.offsetHeight;
   }
-}
 
-function setFreq(el) {
-  document.querySelectorAll('.freq-option').forEach(b => b.classList.remove('active'));
-  el.classList.add('active');
-}
+  function init() {
+    resize();
+    particles = [];
+    const count = Math.min(80, Math.floor(w * h / 12000));
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        r: Math.random() * 1.5 + 0.5,
+        alpha: Math.random() * 0.4 + 0.1,
+        color: ['94,243,255', '139,108,255', '255,79,216'][Math.floor(Math.random() * 3)]
+      });
+    }
+  }
 
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    for (const p of particles) {
+      if (!prefersReduced) {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
+      }
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
+      ctx.fill();
+    }
+    // connection lines
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 120) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(94, 243, 255, ${0.04 * (1 - dist / 120)})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+    animId = requestAnimationFrame(draw);
+  }
+
+  init();
+  if (!prefersReduced) draw();
+  else { draw(); cancelAnimationFrame(animId); }
+
+  window.addEventListener('resize', () => { resize(); });
+})();
+
+// ── NAV SCROLL ──
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+// ── MOBILE MENU ──
+document.getElementById('mobileToggle').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+// close mobile on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+// ── PRODUCT FILTER ──
 function filterProducts(cat, btn) {
   document.querySelectorAll('.product-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   document.querySelectorAll('#productGrid .product-card').forEach(card => {
-    if (cat === 'all' || card.dataset.cat === cat) {
-      card.hidden = false;
-    } else {
-      card.hidden = true;
-    }
+    card.hidden = !(cat === 'all' || card.dataset.cat === cat);
   });
 }
 
+// ── FAQ ──
 function toggleFaq(btn) {
   const item = btn.closest('.faq-item');
   const wasOpen = item.classList.contains('open');
@@ -2591,32 +2224,42 @@ function toggleFaq(btn) {
   if (!wasOpen) item.classList.add('open');
 }
 
+// ── CALCULATOR ──
 function updateCalc() {
   const peptideMg = parseFloat(document.getElementById('calcPeptideAmount').value);
   const solventMl = parseFloat(document.getElementById('calcSolventVolume').value);
   const desiredMcg = parseFloat(document.getElementById('calcDesiredDose').value) || 0;
   const syringeUnits = parseInt(document.getElementById('calcSyringeSize').value);
-
   const concentrationMcg = (peptideMg * 1000) / solventMl;
   const volumePerDose = desiredMcg / concentrationMcg;
   const unitsPerDose = volumePerDose * syringeUnits;
   const dosesPerVial = desiredMcg > 0 ? Math.floor((peptideMg * 1000) / desiredMcg) : 0;
-
   const priceMap = { 5: 44.99, 10: 74.99, 15: 59.99, 20: 84.99, 30: 99.99 };
   const price = priceMap[peptideMg] || 74.99;
   const costPerDose = dosesPerVial > 0 ? price / dosesPerVial : 0;
-
-  document.getElementById('resultConcentration').textContent =
-    concentrationMcg.toLocaleString() + ' mcg/mL';
-  document.getElementById('resultVolume').textContent =
-    volumePerDose.toFixed(3) + ' mL';
-  document.getElementById('resultUnits').textContent =
-    unitsPerDose.toFixed(1) + ' units';
-  document.getElementById('resultDoses').textContent =
-    dosesPerVial + ' doses';
-  document.getElementById('resultCost').textContent =
-    '~$' + costPerDose.toFixed(2);
+  document.getElementById('resultConcentration').textContent = concentrationMcg.toLocaleString() + ' mcg/mL';
+  document.getElementById('resultVolume').textContent = volumePerDose.toFixed(3) + ' mL';
+  document.getElementById('resultUnits').textContent = unitsPerDose.toFixed(1) + ' units';
+  document.getElementById('resultDoses').textContent = dosesPerVial + ' doses';
+  document.getElementById('resultCost').textContent = '~$' + costPerDose.toFixed(2);
 }
+
+// ── SCROLL REVEAL ──
+(function() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+})();
 </script>
 
 </body>
