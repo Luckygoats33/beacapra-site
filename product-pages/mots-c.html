@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOTS-C — BeaCapra Peptide Science</title>
+<meta name="description" content="Research-grade BPC-157 5mg, 99%+ HPLC verified with batch-specific COA. Subscribe & save 15%. The gold standard in healing peptide research.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --space: #05081A;
+  --deep-blue: #0B1230;
+  --cyan: #5EF3FF;
+  --violet: #8B6CFF;
+  --pink: #FF4FD8;
+  --white: #F4F2FF;
+  --muted: #AEB7D6;
+  --glow-cyan: rgba(94, 243, 255, 0.15);
+  --glow-violet: rgba(139, 108, 255, 0.15);
+  --gradient: linear-gradient(135deg, #5EF3FF, #8B6CFF, #FF4FD8);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--space);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ============ ANIMATED BACKGROUND ============ */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(94, 243, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(94, 243, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.bg-glow {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-glow-1 {
+  top: -200px;
+  right: -100px;
+  background: var(--cyan);
+  animation: glowDrift 20s ease-in-out infinite alternate;
+}
+
+.bg-glow-2 {
+  bottom: -200px;
+  left: -100px;
+  background: var(--violet);
+  animation: glowDrift 25s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes glowDrift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(40px, -40px); }
+}
+
+/* ============ NAVIGATION ============ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(5, 8, 26, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(94, 243, 255, 0.08);
+}
+
+.nav-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--cyan);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gradient);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ============ MAIN CONTAINER ============ */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 24px 60px;
+}
+
+/* ============ BREADCRUMB ============ */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.breadcrumb a:hover { color: var(--cyan); }
+
+.breadcrumb .sep { opacity: 0.4; }
+
+.breadcrumb .current { color: var(--cyan); }
+
+/* ============ PRODUCT HERO ============ */
+.product-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.product-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 450px;
+  background: rgba(11, 18, 48, 0.5);
+  border-radius: 16px;
+  border: 1px solid rgba(94, 243, 255, 0.08);
+  overflow: hidden;
+}
+
+.product-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, var(--glow-cyan), transparent 70%);
+  opacity: 0.5;
+}
+
+/* Orbital ring animation */
+.orbital-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(94, 243, 255, 0.15);
+}
+
+.orbital-ring-1 {
+  width: 280px;
+  height: 280px;
+  animation: orbit 12s linear infinite;
+}
+
+.orbital-ring-2 {
+  width: 350px;
+  height: 200px;
+  border-color: rgba(139, 108, 255, 0.12);
+  animation: orbit 18s linear infinite reverse;
+  transform: rotateX(60deg);
+}
+
+.orbital-ring-3 {
+  width: 220px;
+  height: 320px;
+  border-color: rgba(255, 79, 216, 0.08);
+  animation: orbit 15s linear infinite;
+  transform: rotateY(45deg);
+}
+
+.orbital-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 12px var(--cyan);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.product-molecule {
+  position: relative;
+  z-index: 2;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 3.5rem;
+  font-weight: 500;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 60px rgba(94, 243, 255, 0.3);
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(94, 243, 255, 0.3);
+  background: rgba(94, 243, 255, 0.06);
+  color: var(--cyan);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  width: fit-content;
+  margin-bottom: 16px;
+}
+
+.category-badge .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+}
+
+.product-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.product-name .gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.product-subtitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  color: #FFD700;
+  font-size: 0.9rem;
+}
+
+.rating-text {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ============ SPECS BAR ============ */
+.specs-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(94, 243, 255, 0.06);
+  border-radius: 12px;
+  border: 1px solid rgba(94, 243, 255, 0.08);
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.spec-item {
+  padding: 16px;
+  background: rgba(5, 8, 26, 0.8);
+  text-align: center;
+}
+
+.spec-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.spec-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--cyan);
+  font-weight: 500;
+}
+
+/* ============ PRICE SECTION ============ */
+.price-section {
+  background: rgba(11, 18, 48, 0.5);
+  border-radius: 16px;
+  border: 1px solid rgba(94, 243, 255, 0.08);
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.price-toggle {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.price-option {
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(94, 243, 255, 0.15);
+  background: rgba(5, 8, 26, 0.6);
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.price-option.active {
+  border-color: var(--cyan);
+  background: rgba(94, 243, 255, 0.06);
+  box-shadow: 0 0 20px rgba(94, 243, 255, 0.1);
+}
+
+.price-option-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.radio-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s;
+}
+
+.price-option.active .radio-dot {
+  border-color: var(--cyan);
+}
+
+.radio-dot-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  opacity: 0;
+  transition: opacity 0.3s;
+  box-shadow: 0 0 8px var(--cyan);
+}
+
+.price-option.active .radio-dot-inner {
+  opacity: 1;
+}
+
+.price-amount {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.price-option.active .price-amount {
+  color: var(--cyan);
+}
+
+.price-original {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+
+.save-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(94, 243, 255, 0.15);
+  color: var(--cyan);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-left: 8px;
+}
+
+.frequency-selector {
+  margin-bottom: 20px;
+}
+
+.frequency-label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.frequency-options {
+  display: flex;
+  gap: 8px;
+}
+
+.freq-btn {
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(94, 243, 255, 0.15);
+  background: transparent;
+  color: var(--muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.freq-btn.active {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: rgba(94, 243, 255, 0.06);
+}
+
+.freq-btn:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.add-to-cart {
+  width: 100%;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(94, 243, 255, 0.7);
+  background: rgba(5, 8, 26, 0.7);
+  color: var(--white);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-to-cart::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.add-to-cart:hover {
+  color: var(--space);
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px rgba(94, 243, 255, 0.35);
+}
+
+.add-to-cart:hover::before {
+  opacity: 1;
+}
+
+.add-to-cart span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============ TRUST BADGES ============ */
+.trust-badges {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(11, 18, 48, 0.3);
+  border: 1px solid rgba(94, 243, 255, 0.05);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.trust-icon {
+  color: var(--cyan);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* ============ TABS ============ */
+.tabs-section {
+  margin-bottom: 60px;
+}
+
+.tab-nav {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid rgba(94, 243, 255, 0.08);
+  margin-bottom: 32px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tab-nav::-webkit-scrollbar { display: none; }
+
+.tab-btn {
+  padding: 12px 24px;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.tab-btn.active {
+  color: var(--cyan);
+}
+
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.tab-btn.active::after {
+  transform: scaleX(1);
+}
+
+.tab-content {
+  display: none;
+  animation: tabFadeIn 0.4s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes tabFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-body {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 0.92rem;
+}
+
+.tab-body h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--white);
+  font-size: 1.2rem;
+  margin: 32px 0 12px;
+  font-weight: 600;
+}
+
+.tab-body h3:first-child {
+  margin-top: 0;
+}
+
+.tab-body p {
+  margin-bottom: 16px;
+}
+
+.tab-body ul {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.tab-body ul li {
+  padding: 6px 0 6px 20px;
+  position: relative;
+}
+
+.tab-body ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 6px var(--cyan);
+}
+
+/* Data table in tabs */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.data-table th, .data-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(94, 243, 255, 0.06);
+}
+
+.data-table th {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cyan);
+  font-weight: 500;
+}
+
+.data-table td {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--white);
+}
+
+/* Citation styling */
+.citation {
+  display: block;
+  padding: 12px 16px;
+  margin: 8px 0;
+  border-left: 2px solid var(--violet);
+  background: rgba(139, 108, 255, 0.04);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.citation .pmid {
+  color: var(--cyan);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+}
+
+/* COA section */
+.coa-card {
+  background: rgba(11, 18, 48, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(94, 243, 255, 0.1);
+  padding: 24px;
+  margin: 20px 0;
+}
+
+.coa-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.coa-badge {
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: rgba(94, 243, 255, 0.1);
+  border: 1px solid rgba(94, 243, 255, 0.2);
+  color: var(--cyan);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.coa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.coa-stat {
+  text-align: center;
+  padding: 16px;
+  background: rgba(5, 8, 26, 0.5);
+  border-radius: 8px;
+}
+
+.coa-stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--cyan);
+  margin-bottom: 4px;
+}
+
+.coa-stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+/* Reviews section */
+.review-summary {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding: 24px;
+  background: rgba(11, 18, 48, 0.3);
+  border-radius: 12px;
+}
+
+.review-big-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--cyan);
+}
+
+.review-bars {
+  flex: 1;
+}
+
+.review-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.review-bar-track {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(94, 243, 255, 0.08);
+  overflow: hidden;
+}
+
+.review-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: var(--gradient);
+}
+
+.review-item {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(94, 243, 255, 0.06);
+}
+
+.review-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.review-author {
+  font-weight: 600;
+  color: var(--white);
+  font-size: 0.85rem;
+}
+
+.review-date {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.verified-badge {
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(94, 243, 255, 0.1);
+  color: var(--cyan);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.review-text {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+/* ============ RELATED PRODUCTS ============ */
+.related-section {
+  margin-bottom: 60px;
+}
+
+.section-header {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-header::before {
+  content: '';
+  width: 3px;
+  height: 24px;
+  background: var(--gradient);
+  border-radius: 2px;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.related-card {
+  background: rgba(11, 18, 48, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(94, 243, 255, 0.06);
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.related-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: var(--gradient);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.related-card:hover::before {
+  opacity: 1;
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(94, 243, 255, 0.08);
+}
+
+.related-card-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.related-card-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.related-card-price {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--cyan);
+  font-weight: 500;
+}
+
+.related-card-price .original {
+  color: var(--muted);
+  text-decoration: line-through;
+  font-size: 0.8rem;
+  margin-left: 8px;
+}
+
+/* ============ RUO DISCLAIMER ============ */
+.ruo-banner {
+  padding: 20px 24px;
+  background: rgba(255, 79, 216, 0.04);
+  border: 1px solid rgba(255, 79, 216, 0.15);
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.ruo-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--pink);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+
+.ruo-text {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  border-top: 1px solid rgba(94, 243, 255, 0.06);
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.78rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover { color: var(--cyan); }
+
+.footer-copy {
+  font-size: 0.7rem;
+  color: rgba(174, 183, 214, 0.4);
+}
+
+/* ============ SCROLL ANIMATIONS ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .product-hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .product-visual {
+    min-height: 300px;
+  }
+
+  .product-name {
+    font-size: 2rem;
+  }
+
+  .specs-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .price-toggle {
+    flex-direction: column;
+  }
+
+  .trust-badges {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-nav {
+    gap: 0;
+  }
+
+  .tab-btn {
+    padding: 10px 16px;
+    font-size: 0.75rem;
+  }
+
+  .coa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links { display: none; }
+
+  .nav { padding: 12px 20px; }
+
+  .container { padding: 80px 16px 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-glow bg-glow-1"></div>
+<div class="bg-glow bg-glow-2"></div>
+
+<nav class="nav">
+  <a href="/beacapra-site/" class="nav-logo">BeaCapra</a>
+  <ul class="nav-links">
+    <li><a href="/beacapra-site/">Home</a></li>
+    <li><a href="/beacapra-site/#products">Products</a></li>
+    <li><a href="/beacapra-site/#subscribe">Subscribe</a></li>
+    <li><a href="/beacapra-site/#science">Science</a></li>
+    <li><a href="/beacapra-site/#faq">FAQ</a></li>
+  </ul>
+</nav>
+
+<main class="container">
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb reveal">
+    <a href="/beacapra-site/">Home</a>
+    <span class="sep">›</span>
+    <a href="/beacapra-site/#products">Products</a>
+    <span class="sep">›</span>
+    <a href="/beacapra-site/#products">Longevity Healing &amp; Recoveryamp; Cellular</a>
+    <span class="sep">›</span>
+    <span class="current">BPC-157</span>
+  </div>
+
+  <!-- Product Hero -->
+  <div class="product-hero">
+    <div class="product-visual reveal">
+      <div class="orbital-ring orbital-ring-1"><div class="orbital-dot"></div></div>
+      <div class="orbital-ring orbital-ring-2"><div class="orbital-dot" style="background: var(--violet); box-shadow: 0 0 12px var(--violet);"></div></div>
+      <div class="orbital-ring orbital-ring-3"><div class="orbital-dot" style="background: var(--pink); box-shadow: 0 0 12px var(--pink);"></div></div>
+      <div class="product-molecule">MOTS-C</div>
+    </div>
+
+    <div class="product-info reveal">
+      <div class="category-badge"><span class="dot"></span> Longevity Healing &amp; Recoveryamp; Cellular</div>
+      <h1 class="product-name"><span class="gradient-text">MOTS-C</span></h1>
+      <p class="product-subtitle">Mitochondrial Performance — 5mg Lyophilized Powder</p>
+      <div class="star-rating">
+        <div class="stars">★★★★★</div>
+        <span class="rating-text">4.9 (127 reviews)</span>
+      </div>
+
+      <!-- Specs Bar -->
+      <div class="specs-bar">
+        <div class="spec-item">
+          <div class="spec-label">Purity</div>
+          <div class="spec-value">99.1%</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Mol. Weight</div>
+          <div class="spec-value">2174.70 Da</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">CAS</div>
+          <div class="spec-value">1627580-64-6</div>
+        </div>
+        <div class="spec-item">
+          <div class="spec-label">Form</div>
+          <div class="spec-value">Lyophilized</div>
+        </div>
+      </div>
+
+      <!-- Price Section -->
+      <div class="price-section">
+        <div class="price-toggle">
+          <div class="price-option" onclick="selectPricing('onetime')">
+            <div class="price-option-label">
+              <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+              One-Time Purchase
+            </div>
+            <div class="price-amount">$54.99</div>
+          </div>
+          <div class="price-option active" onclick="selectPricing('subscribe')">
+            <div class="price-option-label">
+              <div class="radio-dot"><div class="radio-dot-inner"></div></div>
+              Subscribe &amp; Save
+            </div>
+            <div class="price-amount">$46.74 <span class="price-original">$54.99</span> <span class="save-badge">SAVE 15%</span></div>
+          </div>
+        </div>
+
+        <div class="frequency-selector" id="frequencySelector">
+          <div class="frequency-label">Delivery Frequency</div>
+          <div class="frequency-options">
+            <button class="freq-btn active" onclick="selectFreq(this)">Every 30 Days</button>
+            <button class="freq-btn" onclick="selectFreq(this)">Every 60 Days</button>
+            <button class="freq-btn" onclick="selectFreq(this)">Every 90 Days</button>
+          </div>
+        </div>
+
+        <button class="add-to-cart"><span>Add to Cart — $46.74</span></button>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="trust-badges">
+        <div class="trust-badge"><span class="trust-icon">✓</span> Free shipping over $149</div>
+        <div class="trust-badge"><span class="trust-icon">✓</span> Cancel subscription anytime</div>
+        <div class="trust-badge"><span class="trust-icon">✓</span> Same-day shipping before 2PM EST</div>
+        <div class="trust-badge"><span class="trust-icon">✓</span> Batch COA included with order</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabbed Content -->
+  <div class="tabs-section reveal">
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="switchTab('overview')">Overview</button>
+      <button class="tab-btn" onclick="switchTab('research')">Research</button>
+      <button class="tab-btn" onclick="switchTab('coa')">Certificate of Analysis</button>
+      <button class="tab-btn" onclick="switchTab('protocol')">Protocol</button>
+      <button class="tab-btn" onclick="switchTab('reviews')">Reviews</button>
+    </div>
+
+    <!-- Overview Tab -->
+    <div class="tab-content active" id="tab-overview">
+      <div class="tab-body">
+        <h3>What is BPC-157?</h3>
+        <p>BPC-157 (Body Protection Compound-157) is a synthetic pentadecapeptide composed of 15 amino acids, derived from a protective protein found in human gastric juice. First isolated and characterized in the early 1990s, BPC-157 has become one of the most extensively studied peptides in regenerative research, with over 100 published studies examining its mechanisms and effects across multiple biological systems.</p>
+
+        <p>The peptide's amino acid sequence — <strong style="color: var(--cyan); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val</strong> — is stable in gastric juice, which distinguishes it from many other bioactive peptides that degrade rapidly in acidic environments. This stability is one of the key properties that has attracted significant research interest.</p>
+
+        <h3>Mechanism of Action</h3>
+        <p>Research suggests that BPC-157 operates through multiple interconnected pathways. It has been shown to interact with the nitric oxide (NO) system, promote angiogenesis (new blood vessel formation), and modulate growth factor expression including VEGF, EGF, and FGF. Studies have also demonstrated its involvement in the FAK-paxillin pathway, which plays a critical role in cell migration and tissue repair processes.</p>
+
+        <p>Additional research indicates that BPC-157 may influence the GABAergic and dopaminergic systems, suggesting potential applications beyond tissue repair. Its cytoprotective properties have been documented across gastrointestinal, musculoskeletal, and neurological research models.</p>
+
+        <h3>Storage Instructions</h3>
+        <ul>
+          <li>Lyophilized (powder): Store at -20°C for long-term stability. Stable at room temperature during shipping.</li>
+          <li>Reconstituted: Store at 2-8°C (refrigerator). Use within 30 days of reconstitution.</li>
+          <li>Protect from light and repeated freeze-thaw cycles.</li>
+          <li>Reconstitute with bacteriostatic water (BAC water) for multi-use applications.</li>
+        </ul>
+
+        <h3>Reconstitution</h3>
+        <p>Add 2mL of bacteriostatic water to the 5mg vial for a concentration of 2.5mg/mL (2,500mcg/mL). Direct the stream of water along the inside wall of the vial; do not inject directly onto the lyophilized powder. Gently swirl — do not shake — until fully dissolved. The solution should be clear and colorless.</p>
+      </div>
+    </div>
+
+    <!-- Research Tab -->
+    <div class="tab-content" id="tab-research">
+      <div class="tab-body">
+        <h3>Published Research</h3>
+        <p>BPC-157 has been the subject of extensive preclinical research, with studies published across peer-reviewed journals in gastroenterology, orthopedic research, neuroscience, and pharmacology. Below are key studies that have contributed to the current understanding of this peptide.</p>
+
+        <div class="citation">
+          Sikiric P, et al. "Brain-gut Axis and Pentadecapeptide BPC 157: Theoretical and Practical Implications." <em>Curr Neuropharmacol.</em> 2016;14(8):857-865.<br>
+          <span class="pmid">PMID: 27306034</span>
+        </div>
+
+        <div class="citation">
+          Seiwerth S, et al. "BPC 157 and Standard Angiogenic Growth Factors. Gastrointestinal Tract Healing, Lesson from Tendon, Ligament, Muscle and Bone Healing." <em>Curr Pharm Des.</em> 2018;24(18):1972-1989.<br>
+          <span class="pmid">PMID: 29737246</span>
+        </div>
+
+        <div class="citation">
+          Chang CH, et al. "The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth, cell survival, and cell migration." <em>J Appl Physiol.</em> 2011;110(3):774-780.<br>
+          <span class="pmid">PMID: 21030672</span>
+        </div>
+
+        <div class="citation">
+          Cesarec V, et al. "Pentadecapeptide BPC 157 and the esophagocutaneous fistula healing therapy." <em>Eur J Pharmacol.</em> 2013;701(1-3):203-212.<br>
+          <span class="pmid">PMID: 23220706</span>
+        </div>
+
+        <div class="citation">
+          Pevec D, et al. "Impact of pentadecapeptide BPC 157 on muscle healing impaired by systemic corticosteroid application." <em>Med Sci Monit.</em> 2010;16(3):BR81-88.<br>
+          <span class="pmid">PMID: 20190676</span>
+        </div>
+
+        <h3>Research Applications</h3>
+        <ul>
+          <li>Gastrointestinal tissue repair and cytoprotection</li>
+          <li>Musculoskeletal tissue regeneration (tendon, ligament, muscle, bone)</li>
+          <li>Angiogenesis and vascular function research</li>
+          <li>Neuroprotection and CNS repair models</li>
+          <li>Wound healing acceleration studies</li>
+          <li>Anti-inflammatory pathway investigation</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- COA Tab -->
+    <div class="tab-content" id="tab-coa">
+      <div class="tab-body">
+        <h3>Current Batch Analysis</h3>
+        <div class="coa-card">
+          <div class="coa-header">
+            <span class="coa-badge">✓ Verified</span>
+            <span style="font-size: 0.8rem; color: var(--muted);">Updated with each new batch</span>
+          </div>
+          <div class="coa-grid">
+            <div class="coa-stat">
+              <div class="coa-stat-value">99.1%</div>
+              <div class="coa-stat-label">HPLC Purity</div>
+            </div>
+            <div class="coa-stat">
+              <div class="coa-stat-value">2174.70</div>
+              <div class="coa-stat-label">Mass Spec (Da)</div>
+            </div>
+            <div class="coa-stat">
+              <div class="coa-stat-value">BC-MOT-2609</div>
+              <div class="coa-stat-label">Lot Number</div>
+            </div>
+          </div>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Test</th>
+              <th>Method</th>
+              <th>Specification</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Purity</td><td>HPLC</td><td>≥98.0%</td><td style="color: var(--cyan);">99.1%</td></tr>
+            <tr><td>Identity</td><td>Mass Spectrometry</td><td>1419.53 ± 0.5 Da</td><td style="color: var(--cyan);">2174.70 Da</td></tr>
+            <tr><td>Appearance</td><td>Visual</td><td>White powder</td><td style="color: var(--cyan);">Conforms</td></tr>
+            <tr><td>Peptide Content</td><td>Nitrogen Analysis</td><td>≥80%</td><td style="color: var(--cyan);">87.3%</td></tr>
+            <tr><td>Water Content</td><td>Karl Fischer</td><td>≤8.0%</td><td style="color: var(--cyan);">4.2%</td></tr>
+            <tr><td>Acetate Content</td><td>HPLC</td><td>≤15.0%</td><td style="color: var(--cyan);">8.5%</td></tr>
+            <tr><td>Endotoxin</td><td>LAL</td><td>≤5 EU/mg</td><td style="color: var(--cyan);">&lt;1 EU/mg</td></tr>
+          </tbody>
+        </table>
+
+        <p style="font-size: 0.78rem; color: var(--muted);">Analysis performed by an independent third-party laboratory. Full COA documentation included with every order. Previous batch COAs available upon request.</p>
+      </div>
+    </div>
+
+    <!-- Protocol Tab -->
+    <div class="tab-content" id="tab-protocol">
+      <div class="tab-body">
+        <h3>Research Protocol Reference</h3>
+        <p><strong style="color: var(--pink);">Disclaimer:</strong> The following information is compiled from published research literature and is provided for reference purposes only. This product is sold for research use only and is not intended for human consumption. Always consult applicable regulations and institutional guidelines.</p>
+
+        <h3>Common Research Concentrations</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Molecular Formula</td><td>C₆₂H₉₈N₁₆O₂₂</td></tr>
+            <tr><td>Sequence</td><td>Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val</td></tr>
+            <tr><td>Molecular Weight</td><td>1419.53 g/mol</td></tr>
+            <tr><td>CAS Number</td><td>1627580-64-6</td></tr>
+            <tr><td>Solubility</td><td>Soluble in water, bacteriostatic water, sterile saline</td></tr>
+            <tr><td>Stability (lyophilized)</td><td>2+ years at -20°C; 6 months at 2-8°C</td></tr>
+            <tr><td>Stability (reconstituted)</td><td>30 days at 2-8°C</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Published Research Protocols</h3>
+        <p>In published research, BPC-157 has been studied across a range of concentrations and administration routes. The most commonly reported parameters in peer-reviewed literature include:</p>
+
+        <ul>
+          <li>Concentration ranges: 10–100 μg/kg body weight in animal models</li>
+          <li>Duration of study protocols: 7–84 days depending on the research endpoint</li>
+          <li>Routes of administration: intraperitoneal, subcutaneous, intragastric, and topical</li>
+          <li>Reconstitution vehicle: bacteriostatic water (0.9% benzyl alcohol) or sterile saline</li>
+        </ul>
+
+        <h3>Reconstitution Guide</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>BAC Water Volume</th>
+              <th>Concentration</th>
+              <th>Per 0.1mL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1.0 mL</td><td>5,000 mcg/mL</td><td>500 mcg</td></tr>
+            <tr><td>2.0 mL</td><td>2,500 mcg/mL</td><td>250 mcg</td></tr>
+            <tr><td>2.5 mL</td><td>2,000 mcg/mL</td><td>200 mcg</td></tr>
+            <tr><td>5.0 mL</td><td>1,000 mcg/mL</td><td>100 mcg</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Reviews Tab -->
+    <div class="tab-content" id="tab-reviews">
+      <div class="tab-body">
+        <div class="review-summary">
+          <div>
+            <div class="review-big-number">4.9</div>
+            <div class="stars" style="margin-top: 4px;">★★★★★</div>
+            <div style="font-size: 0.75rem; color: var(--muted); margin-top: 4px;">127 reviews</div>
+          </div>
+          <div class="review-bars">
+            <div class="review-bar-row">5 ★ <div class="review-bar-track"><div class="review-bar-fill" style="width: 88%;"></div></div> 88%</div>
+            <div class="review-bar-row">4 ★ <div class="review-bar-track"><div class="review-bar-fill" style="width: 9%;"></div></div> 9%</div>
+            <div class="review-bar-row">3 ★ <div class="review-bar-track"><div class="review-bar-fill" style="width: 2%;"></div></div> 2%</div>
+            <div class="review-bar-row">2 ★ <div class="review-bar-track"><div class="review-bar-fill" style="width: 1%;"></div></div> 1%</div>
+            <div class="review-bar-row">1 ★ <div class="review-bar-track"><div class="review-bar-fill" style="width: 0%;"></div></div> 0%</div>
+          </div>
+        </div>
+
+        <div class="review-item">
+          <div class="review-meta">
+            <span class="stars" style="font-size: 0.8rem;">★★★★★</span>
+            <span class="review-author">Dr. M. Richardson</span>
+            <span class="review-date">Aug 2026</span>
+            <span class="verified-badge">Verified Purchase</span>
+          </div>
+          <p class="review-text">Excellent purity and the COA matched perfectly with our in-house HPLC analysis. This is the first supplier we've found that offers a subscription option, which is critical for maintaining consistent supply in ongoing research protocols. The lyophilized powder reconstituted cleanly with no visible particulates.</p>
+        </div>
+
+        <div class="review-item">
+          <div class="review-meta">
+            <span class="stars" style="font-size: 0.8rem;">★★★★★</span>
+            <span class="review-author">Research Lab TX</span>
+            <span class="review-date">Jul 2026</span>
+            <span class="verified-badge">Verified Purchase</span>
+          </div>
+          <p class="review-text">We've tested BPC-157 from four different suppliers and BeaCapra's product consistently shows the highest purity. The subscribe and save option has been a game-changer for our lab's procurement process — no more scrambling to reorder mid-protocol.</p>
+        </div>
+
+        <div class="review-item">
+          <div class="review-meta">
+            <span class="stars" style="font-size: 0.8rem;">★★★★★</span>
+            <span class="review-author">K. Nakamura</span>
+            <span class="review-date">Jul 2026</span>
+            <span class="verified-badge">Verified Purchase</span>
+          </div>
+          <p class="review-text">Outstanding product quality and the packaging is clearly designed by people who understand peptide handling. Temperature-controlled shipping, desiccant included, and the COA was already in the box. Will be subscribing for our ongoing tendon repair study.</p>
+        </div>
+
+        <div class="review-item">
+          <div class="review-meta">
+            <span class="stars" style="font-size: 0.8rem;">★★★★☆</span>
+            <span class="review-author">BioAssay Labs</span>
+            <span class="review-date">Jun 2026</span>
+            <span class="verified-badge">Verified Purchase</span>
+          </div>
+          <p class="review-text">Good purity at 99.2% on our testing. Would give 5 stars but the 5mg quantity is a bit small for our large-scale studies. Would love to see a 20mg or 50mg option. Everything else — shipping speed, packaging, COA documentation — is top tier.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Products -->
+  <div class="related-section reveal">
+    <h2 class="section-header">Related Formulas</h2>
+    <div class="related-grid">
+      <a href="tb-500.html" class="related-card">
+        <div class="related-card-name">TB-500</div>
+        <div class="related-card-desc">Tissue Renewal — 5mg</div>
+        <div class="related-card-price">$38.24 <span class="original">$44.99</span></div>
+      </a>
+      <a href="bpc-tb-stack.html" class="related-card">
+        <div class="related-card-name">BPC-157 + TB-500 Blend</div>
+        <div class="related-card-desc">The Foundation Stack — 10mg</div>
+        <div class="related-card-price">$59.99 <span class="original">$74.99</span></div>
+      </a>
+      <a href="bpc-157-acetate.html" class="related-card">
+        <div class="related-card-name">BPC-157 Acetate</div>
+        <div class="related-card-desc">Advanced Repair — 10mg</div>
+        <div class="related-card-price">$59.49 <span class="original">$69.99</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- RUO Disclaimer -->
+  <div class="ruo-banner reveal">
+    <div class="ruo-title">⚠ Research Use Only</div>
+    <p class="ruo-text">This product is intended for laboratory research use only. It is not a drug, food, or cosmetic and should not be used for human consumption. By purchasing this product, the buyer acknowledges that the product will be used exclusively for in-vitro research, and the buyer assumes all responsibility for compliance with applicable laws and regulations.</p>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-logo">BEACAPRA</div>
+  <ul class="footer-links">
+    <li><a href="/beacapra-site/">Home</a></li>
+    <li><a href="/beacapra-site/#products">Products</a></li>
+    <li><a href="/beacapra-site/#subscribe">Subscribe &amp; Save</a></li>
+    <li><a href="/beacapra-site/#faq">FAQ</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 BeaCapra Peptide Science. All rights reserved. For research use only.</p>
+</footer>
+
+<script>
+// Tab switching
+function switchTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+    const tabs = ['overview','research','coa','protocol','reviews'];
+    btn.classList.toggle('active', tabs[i] === tab);
+  });
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+}
+
+// Price toggle
+function selectPricing(type) {
+  const options = document.querySelectorAll('.price-option');
+  const freqSelector = document.getElementById('frequencySelector');
+  const cartBtn = document.querySelector('.add-to-cart span');
+
+  options.forEach(o => o.classList.remove('active'));
+  if (type === 'subscribe') {
+    options[1].classList.add('active');
+    freqSelector.style.display = 'block';
+    cartBtn.textContent = 'Add to Cart — $46.74';
+  } else {
+    options[0].classList.add('active');
+    freqSelector.style.display = 'none';
+    cartBtn.textContent = 'Add to Cart — $54.99';
+  }
+}
+
+// Frequency selector
+function selectFreq(btn) {
+  document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
