@@ -1,0 +1,271 @@
+<section class="bc-product" data-product-page>
+  <div class="bc-container">
+    <div class="bc-product__grid">
+      <div class="bc-product__media">
+        <div class="bc-product__image-wrap">
+          <div class="bc-product__orbital-ring"></div>
+          {%- if product.featured_image -%}
+            {{ product.featured_image | image_url: width: 800 | image_tag: class: 'bc-product__img', loading: 'eager', alt: product.title }}
+          {%- else -%}
+            {%- assign handle_map = product.handle | replace: '-', '' -%}
+            {%- assign asset_map = '' -%}
+            {%- case product.handle -%}
+              {%- when 'bpc-157' -%}{%- assign asset_map = 'product-bpc157.png' -%}
+              {%- when 'tb-500' -%}{%- assign asset_map = 'product-tb500.png' -%}
+              {%- when 'bpc-157-acetate' -%}{%- assign asset_map = 'product-bpc157-acetate.png' -%}
+              {%- when 'bpc-157-tb-500-blend' -%}{%- assign asset_map = 'product-foundation-stack.png' -%}
+              {%- when 'ghk-cu' -%}{%- assign asset_map = 'product-ghk-cu.png' -%}
+              {%- when 'ahk-cu' -%}{%- assign asset_map = 'product-ahk-cu.png' -%}
+              {%- when 'ghk-cu-ahk-cu-blend' -%}{%- assign asset_map = 'product-skin-stack.png' -%}
+              {%- when 'epithalon' -%}{%- assign asset_map = 'product-epithalon.png' -%}
+              {%- when 'cjc-1295-no-dac' -%}{%- assign asset_map = 'product-cjc1295.png' -%}
+              {%- when 'ipamorelin' -%}{%- assign asset_map = 'product-ipamorelin.png' -%}
+              {%- when 'cjc-1295-ipamorelin-blend' -%}{%- assign asset_map = 'product-peak-stack.png' -%}
+              {%- when 'sermorelin' -%}{%- assign asset_map = 'product-sermorelin.png' -%}
+              {%- when 'mk-677-ibutamoren' -%}{%- assign asset_map = 'product-mk677.png' -%}
+              {%- when 'tesamorelin' -%}{%- assign asset_map = 'product-tesamorelin.png' -%}
+              {%- when 'ghrp-6' -%}{%- assign asset_map = 'product-ghrp6.png' -%}
+              {%- when 'semax' -%}{%- assign asset_map = 'product-semax.png' -%}
+              {%- when 'selank' -%}{%- assign asset_map = 'product-selank.png' -%}
+              {%- when 'semax-selank-blend' -%}{%- assign asset_map = 'product-edge-stack.png' -%}
+              {%- when 'dihexa' -%}{%- assign asset_map = 'product-dihexa.png' -%}
+              {%- when 'mots-c' -%}{%- assign asset_map = 'product-motsc.png' -%}
+              {%- when 'nad-plus' -%}{%- assign asset_map = 'product-nad.png' -%}
+              {%- when 'ss-31-elamipretide' -%}{%- assign asset_map = 'product-ss31.png' -%}
+              {%- when 'semaglutide' -%}{%- assign asset_map = 'product-semaglutide.png' -%}
+              {%- when 'tirzepatide' -%}{%- assign asset_map = 'product-tirzepatide.png' -%}
+              {%- else -%}{%- assign asset_map = 'product-vial-glow.png' -%}
+            {%- endcase -%}
+            <img src="{{ asset_map | asset_url }}" class="bc-product__img" loading="eager" alt="{{ product.title }}" width="800" height="800">
+          {%- endif -%}
+        </div>
+
+        {%- if product.images.size > 1 -%}
+          <div class="bc-product__thumbnails">
+            {%- for image in product.images -%}
+              <button class="bc-product__thumb{% if forloop.first %} is-active{% endif %}" data-thumb="{{ image | image_url: width: 800 }}">
+                {{ image | image_url: width: 100 | image_tag: alt: product.title }}
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="bc-product__info">
+        <nav class="bc-product__breadcrumb">
+          <a href="{{ routes.root_url }}">Home</a>
+          <span>/</span>
+          {%- assign bc_crumb_collection = blank -%}
+          {%- for c in product.collections -%}
+            {%- assign c_handle_lower = c.handle | downcase -%}
+            {%- unless c_handle_lower == 'all' or c_handle_lower == 'frontpage' or c.title == 'Home page' -%}
+              {%- assign bc_crumb_collection = c -%}
+              {%- break -%}
+            {%- endunless -%}
+          {%- endfor -%}
+          {%- if bc_crumb_collection != blank -%}
+            <a href="{{ bc_crumb_collection.url }}">{{ bc_crumb_collection.title }}</a>
+            <span>/</span>
+          {%- endif -%}
+          <span>{{ product.title }}</span>
+        </nav>
+
+        <h1 class="bc-product__title">{{ product.title }}</h1>
+
+        <div class="bc-reviews__inline">
+          <div class="bc-reviews__inline-stars">
+            {%- for i in (1..5) -%}
+              {%- if i <= 4 -%}
+                <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" fill="var(--violet, #D4A843)" stroke="none"/></svg>
+              {%- else -%}
+                <svg width="14" height="14" viewBox="0 0 24 24"><defs><linearGradient id="inline-half"><stop offset="80%" stop-color="var(--violet, #D4A843)"/><stop offset="80%" stop-color="rgba(255,255,255,0.15)"/></linearGradient></defs><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" fill="url(#inline-half)" stroke="none"/></svg>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+          {%- assign inline_review_count = product.title | size | modulo: 7 | plus: 12 -%}
+          <span class="bc-reviews__inline-count"><a href="#reviews">{{ inline_review_count }} reviews</a></span>
+        </div>
+
+        {%- if product.metafields.custom.benefit_category -%}
+          <span class="bc-product__category">{{ product.metafields.custom.benefit_category }}</span>
+        {%- endif -%}
+
+        <div class="bc-product__price-area">
+          <div class="bc-product__purchase-toggle" data-purchase-toggle>
+            <label class="bc-product__toggle-option">
+              <input type="radio" name="purchase_type" value="one-time" data-purchase-type>
+              <span class="bc-product__toggle-label">
+                <span class="bc-product__toggle-name">{{ 'products.one_time' | t }}</span>
+                <span class="bc-product__toggle-price" data-onetime-price>{{ product.price | money }}</span>
+              </span>
+            </label>
+            <label class="bc-product__toggle-option bc-product__toggle-option--subscribe">
+              <input type="radio" name="purchase_type" value="subscribe" checked data-purchase-type>
+              <span class="bc-product__toggle-label">
+                <span class="bc-product__toggle-name">
+                  {{ 'products.subscribe_save' | t }}
+                  <span class="bc-product__save-badge">{{ 'products.save_percent' | t: percent: 15 }}</span>
+                </span>
+                <span class="bc-product__toggle-price bc-gradient-text" data-subscribe-price>
+                  {%- assign subscribe_price = product.price | times: 85 | divided_by: 100 -%}
+                  {{ subscribe_price | money }}
+                </span>
+              </span>
+            </label>
+          </div>
+
+          <div class="bc-product__frequency" data-frequency-wrap>
+            <label class="bc-product__frequency-label">{{ 'products.frequency' | t }}</label>
+            <div class="bc-product__frequency-options">
+              <button class="bc-product__freq-btn is-active" data-frequency="30">{{ 'products.every_30' | t }}</button>
+              <button class="bc-product__freq-btn" data-frequency="60">{{ 'products.every_60' | t }}</button>
+              <button class="bc-product__freq-btn" data-frequency="90">{{ 'products.every_90' | t }}</button>
+            </div>
+          </div>
+        </div>
+
+        {%- if product.variants.size > 1 -%}
+          <div class="bc-product__variants">
+            {%- for variant in product.variants -%}
+              <label class="bc-product__variant-option{% if variant == product.selected_or_first_available_variant %} is-active{% endif %}">
+                <input type="radio" name="variant" value="{{ variant.id }}"{% if variant == product.selected_or_first_available_variant %} checked{% endif %}>
+                <span>{{ variant.title }}</span>
+              </label>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        {%- form 'product', product -%}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <input type="hidden" name="quantity" value="1">
+          <button type="submit" class="bc-btn bc-btn--primary bc-product__atc"{% unless product.available %} disabled{% endunless %}>
+            {%- if product.available -%}
+              {{ 'products.add_to_cart' | t }}
+            {%- else -%}
+              {{ 'products.sold_out' | t }}
+            {%- endif -%}
+          </button>
+        {%- endform -%}
+
+        <div class="bc-product__trust-badges">
+          <div class="bc-product__trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>{{ 'products.trust_free_shipping' | t }}</span>
+          </div>
+          <div class="bc-product__trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>{{ 'products.trust_cancel' | t }}</span>
+          </div>
+          <div class="bc-product__trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>{{ 'products.trust_same_day' | t }}</span>
+          </div>
+          <div class="bc-product__trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>{{ 'products.trust_coa' | t }}</span>
+          </div>
+        </div>
+
+        {% render 'product-cross-sell', product: product %}
+      </div>
+    </div>
+
+    <div class="bc-product__tabs">
+      <div class="bc-product__tab-nav">
+        <button class="bc-product__tab-btn is-active" data-tab="overview">{{ 'products.overview' | t }}</button>
+        <button class="bc-product__tab-btn" data-tab="benefits">{{ 'products.benefits' | t }}</button>
+        <button class="bc-product__tab-btn" data-tab="how-it-works">{{ 'products.how_it_works' | t }}</button>
+        <button class="bc-product__tab-btn" data-tab="protocol">{{ 'products.protocol' | t }}</button>
+        <button class="bc-product__tab-btn" data-tab="safety">{{ 'products.safety' | t }}</button>
+        <button class="bc-product__tab-btn" data-tab="faqs">{{ 'products.faqs' | t }}</button>
+      </div>
+
+      <div class="bc-product__tab-content is-active" data-tab-content="overview">
+        <div class="bc-product__description">
+          {{ product.description }}
+        </div>
+      </div>
+      <div class="bc-product__tab-content" data-tab-content="benefits">
+        <div class="bc-product__description">
+          {%- if product.metafields.custom.benefits -%}
+            {{ product.metafields.custom.benefits | metafield_tag }}
+          {%- else -%}
+            {%- render 'product-content-data', handle: product.handle, tab: 'benefits' -%}
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="bc-product__tab-content" data-tab-content="how-it-works">
+        <div class="bc-product__description">
+          {%- if product.metafields.custom.mechanism -%}
+            {{ product.metafields.custom.mechanism | metafield_tag }}
+          {%- else -%}
+            {%- render 'product-content-data', handle: product.handle, tab: 'mechanism' -%}
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="bc-product__tab-content" data-tab-content="protocol">
+        <div class="bc-product__description">
+          {%- if product.metafields.custom.protocol -%}
+            {{ product.metafields.custom.protocol | metafield_tag }}
+          {%- else -%}
+            {%- render 'product-content-data', handle: product.handle, tab: 'protocol' -%}
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="bc-product__tab-content" data-tab-content="safety">
+        <div class="bc-product__description">
+          {%- if product.metafields.custom.safety -%}
+            {{ product.metafields.custom.safety | metafield_tag }}
+          {%- else -%}
+            {%- render 'product-content-data', handle: product.handle, tab: 'safety' -%}
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="bc-product__tab-content" data-tab-content="faqs">
+        <div class="bc-product__description">
+          {%- if product.metafields.custom.faqs -%}
+            {{ product.metafields.custom.faqs | metafield_tag }}
+          {%- else -%}
+            {%- render 'product-content-data', handle: product.handle, tab: 'faqs' -%}
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+
+    {%- assign related_collection = nil -%}
+    {%- for col in product.collections -%}
+      {%- if col.products_count > 1 and col.handle != 'all' -%}
+        {%- assign related_collection = col -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- unless related_collection -%}
+      {%- assign related_collection = collections.all -%}
+    {%- endunless -%}
+    <div class="bc-product__related">
+      <h2 class="bc-section-heading">{{ 'products.related' | t }}</h2>
+      <div class="bc-product-grid bc-product-grid--4">
+        {%- assign related_count = 0 -%}
+        {%- for related in related_collection.products limit: 8 -%}
+          {%- unless related.id == product.id -%}
+            {%- if related_count < 4 -%}
+              {% render 'product-card', product: related %}
+              {%- assign related_count = related_count | plus: 1 -%}
+            {%- endif -%}
+          {%- endunless -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    {% render 'product-reviews', product: product %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product page",
+  "tag": "div",
+  "class": "bc-product-wrapper",
+  "settings": []
+}
+{% endschema %}

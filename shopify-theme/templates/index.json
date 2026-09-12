@@ -1,0 +1,115 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {}
+    },
+    "trust-bar": {
+      "type": "trust-bar",
+      "settings": {}
+    },
+    "shop-by-goal": {
+      "type": "shop-by-goal",
+      "settings": {},
+      "blocks": {
+        "cat_metabolic": { "type": "category", "settings": { "title": "Metabolic", "count": "View Collection", "icon": "glp1", "url": "/collections/metabolic" } },
+        "cat_recovery": { "type": "category", "settings": { "title": "Recovery & Repair", "count": "View Collection", "icon": "recovery", "url": "/collections/recovery" } },
+        "cat_growth": { "type": "category", "settings": { "title": "Growth Factors", "count": "View Collection", "icon": "growth", "url": "/collections/growth-factors" } },
+        "cat_cognitive": { "type": "category", "settings": { "title": "Cognitive", "count": "View Collection", "icon": "cognitive", "url": "/collections/cognitive" } },
+        "cat_cellular": { "type": "category", "settings": { "title": "Cellular Health", "count": "View Collection", "icon": "cellular", "url": "/collections/cellular-health" } },
+        "cat_longevity": { "type": "category", "settings": { "title": "Longevity", "count": "View Collection", "icon": "longevity", "url": "/collections/longevity" } },
+        "cat_sleep": { "type": "category", "settings": { "title": "Sleep & Circadian", "count": "View Collection", "icon": "sleep", "url": "/collections/sleep" } },
+        "cat_immune": { "type": "category", "settings": { "title": "Immune Support", "count": "View Collection", "icon": "immune", "url": "/collections/immune" } },
+        "cat_skin": { "type": "category", "settings": { "title": "Skin & Cosmetic", "count": "View Collection", "icon": "skin", "url": "/collections/skin-cosmetic" } },
+        "cat_melanocortin": { "type": "category", "settings": { "title": "Melanocortin", "count": "View Collection", "icon": "melanocortin", "url": "/collections/melanocortin" } },
+        "cat_vascular": { "type": "category", "settings": { "title": "Vascular", "count": "View Collection", "icon": "vascular", "url": "/collections/vascular" } }
+      },
+      "block_order": ["cat_metabolic", "cat_recovery", "cat_growth", "cat_cognitive", "cat_cellular", "cat_longevity", "cat_sleep", "cat_immune", "cat_skin", "cat_melanocortin", "cat_vascular"]
+    },
+    "featured-products": {
+      "type": "featured-products",
+      "settings": {
+        "collection": "all"
+      },
+      "blocks": {
+        "fp_bpc157": { "type": "product", "settings": { "product": "bpc-157" } },
+        "fp_semaglutide": { "type": "product", "settings": { "product": "semaglutide" } },
+        "fp_tb500": { "type": "product", "settings": { "product": "tb-500" } },
+        "fp_tirzepatide": { "type": "product", "settings": { "product": "tirzepatide" } },
+        "fp_5amino": { "type": "product", "settings": { "product": "5-amino-1mq" } },
+        "fp_ghkcu": { "type": "product", "settings": { "product": "ghk-cu" } },
+        "fp_bodycomp": { "type": "product", "settings": { "product": "body-composition-kit" } },
+        "fp_selank": { "type": "product", "settings": { "product": "selank" } }
+      },
+      "block_order": ["fp_bpc157", "fp_semaglutide", "fp_tb500", "fp_tirzepatide", "fp_5amino", "fp_ghkcu", "fp_bodycomp", "fp_selank"]
+    },
+    "subscribe-save": {
+      "type": "subscribe-save",
+      "settings": {}
+    },
+    "bundle-recommendations": {
+      "type": "bundle-recommendations",
+      "settings": {}
+    },
+    "coa-transparency": {
+      "type": "coa-transparency",
+      "settings": {}
+    },
+    "science-quality": {
+      "type": "science-quality",
+      "settings": {}
+    },
+    "comparison-table": {
+      "type": "comparison-table",
+      "settings": {}
+    },
+    "social-proof": {
+      "type": "social-proof",
+      "settings": {}
+    },
+    "tools-teaser": {
+      "type": "tools-teaser",
+      "settings": {}
+    },
+    "calculator": {
+      "type": "reconstitution-calculator",
+      "settings": {}
+    },
+    "blog-preview": {
+      "type": "blog-preview",
+      "settings": {
+        "blog": "research"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {}
+    },
+    "ruo": {
+      "type": "ruo-disclaimer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "trust-bar",
+    "shop-by-goal",
+    "featured-products",
+    "subscribe-save",
+    "bundle-recommendations",
+    "coa-transparency",
+    "science-quality",
+    "comparison-table",
+    "social-proof",
+    "tools-teaser",
+    "calculator",
+    "blog-preview",
+    "faq",
+    "newsletter",
+    "ruo"
+  ]
+}

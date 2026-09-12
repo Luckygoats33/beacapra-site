@@ -1,0 +1,320 @@
+{%- assign cs_products = '' -%}
+{%- assign product_type_lower = product.type | downcase -%}
+
+{%- if product_type_lower == 'vial' -%}
+  {%- assign bac_water = all_products['bac-water'] -%}
+  {%- assign needles = all_products['10-needles'] -%}
+
+  {%- case product.handle -%}
+    {%- when 'bpc-157' -%}
+      {%- assign pair = all_products['tb-500'] -%}
+    {%- when 'tb-500' -%}
+      {%- assign pair = all_products['bpc-157'] -%}
+    {%- when 'semaglutide' -%}
+      {%- assign pair = all_products['tirzepatide'] -%}
+    {%- when 'tirzepatide' -%}
+      {%- assign pair = all_products['semaglutide'] -%}
+    {%- when 'ghk-cu' -%}
+      {%- assign pair = all_products['ahk-cu'] -%}
+    {%- when 'ahk-cu' -%}
+      {%- assign pair = all_products['ghk-cu'] -%}
+    {%- when 'semax' -%}
+      {%- assign pair = all_products['selank'] -%}
+    {%- when 'selank' -%}
+      {%- assign pair = all_products['semax'] -%}
+    {%- when 'cjc-1295-no-dac' -%}
+      {%- assign pair = all_products['ipamorelin'] -%}
+    {%- when 'ipamorelin' -%}
+      {%- assign pair = all_products['cjc-1295-no-dac'] -%}
+    {%- when 'mots-c' -%}
+      {%- assign pair = all_products['nad-plus'] -%}
+    {%- when 'nad-plus' -%}
+      {%- assign pair = all_products['mots-c'] -%}
+    {%- else -%}
+      {%- assign pair = all_products['bpc-157'] -%}
+      {%- if pair.id == product.id -%}
+        {%- assign pair = all_products['tb-500'] -%}
+      {%- endif -%}
+  {%- endcase -%}
+
+{%- elsif product_type_lower == 'spray' -%}
+  {%- assign bac_water = nil -%}
+  {%- assign needles = nil -%}
+  {%- assign spray_handle = product.handle | remove: '-spray' -%}
+  {%- assign pair = all_products[spray_handle] -%}
+  {%- if pair == blank or pair.id == product.id -%}
+    {%- assign pair = all_products['bpc-157'] -%}
+  {%- endif -%}
+
+{%- elsif product_type_lower == 'kit' -%}
+  {%- assign bac_water = all_products['bac-water'] -%}
+  {%- assign needles = all_products['10-needles'] -%}
+  {%- assign pair = nil -%}
+
+{%- else -%}
+  {%- assign bac_water = nil -%}
+  {%- assign needles = nil -%}
+  {%- assign pair = all_products['bpc-157'] -%}
+{%- endif -%}
+
+{%- assign cs_items = '' -%}
+{%- assign cs_count = 0 -%}
+{%- assign cs_total = product.price -%}
+
+{%- if pair != blank and pair.id != product.id and pair.available -%}
+  {%- assign cs_count = cs_count | plus: 1 -%}
+  {%- assign cs_total = cs_total | plus: pair.price -%}
+{%- endif -%}
+{%- if bac_water != blank and bac_water.id != product.id and bac_water.available -%}
+  {%- assign cs_count = cs_count | plus: 1 -%}
+  {%- assign cs_total = cs_total | plus: bac_water.price -%}
+{%- endif -%}
+{%- if needles != blank and needles.id != product.id and needles.available -%}
+  {%- assign cs_count = cs_count | plus: 1 -%}
+  {%- assign cs_total = cs_total | plus: needles.price -%}
+{%- endif -%}
+
+{%- if cs_count > 0 -%}
+<div class="bc-cross-sell">
+  <h3 class="bc-cross-sell__title">Frequently Bought Together</h3>
+
+  <div class="bc-cross-sell__items">
+    <div class="bc-cross-sell__product bc-cross-sell__product--current">
+      <div class="bc-cross-sell__img-wrap">
+        {%- if product.featured_image -%}
+          {{ product.featured_image | image_url: width: 200 | image_tag: loading: 'lazy', alt: product.title, class: 'bc-cross-sell__img' }}
+        {%- else -%}
+          <img src="{{ 'product-vial-glow.png' | asset_url }}" alt="{{ product.title }}" class="bc-cross-sell__img" width="200" height="200" loading="lazy">
+        {%- endif -%}
+        <span class="bc-cross-sell__check">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+      </div>
+      <span class="bc-cross-sell__name">{{ product.title }}</span>
+      <span class="bc-cross-sell__price">{{ product.price | money }}</span>
+    </div>
+
+    {%- if pair != blank and pair.id != product.id and pair.available -%}
+      <span class="bc-cross-sell__plus">+</span>
+      <a href="{{ pair.url }}" class="bc-cross-sell__product">
+        <div class="bc-cross-sell__img-wrap">
+          {%- if pair.featured_image -%}
+            {{ pair.featured_image | image_url: width: 200 | image_tag: loading: 'lazy', alt: pair.title, class: 'bc-cross-sell__img' }}
+          {%- else -%}
+            <img src="{{ 'product-vial-glow.png' | asset_url }}" alt="{{ pair.title }}" class="bc-cross-sell__img" width="200" height="200" loading="lazy">
+          {%- endif -%}
+        </div>
+        <span class="bc-cross-sell__name">{{ pair.title }}</span>
+        <span class="bc-cross-sell__price">{{ pair.price | money }}</span>
+      </a>
+    {%- endif -%}
+
+    {%- if bac_water != blank and bac_water.id != product.id and bac_water.available -%}
+      <span class="bc-cross-sell__plus">+</span>
+      <a href="{{ bac_water.url }}" class="bc-cross-sell__product">
+        <div class="bc-cross-sell__img-wrap">
+          {%- if bac_water.featured_image -%}
+            {{ bac_water.featured_image | image_url: width: 200 | image_tag: loading: 'lazy', alt: bac_water.title, class: 'bc-cross-sell__img' }}
+          {%- else -%}
+            <img src="{{ 'product-vial-glow.png' | asset_url }}" alt="{{ bac_water.title }}" class="bc-cross-sell__img" width="200" height="200" loading="lazy">
+          {%- endif -%}
+        </div>
+        <span class="bc-cross-sell__name">{{ bac_water.title }}</span>
+        <span class="bc-cross-sell__price">{{ bac_water.price | money }}</span>
+      </a>
+    {%- endif -%}
+
+    {%- if needles != blank and needles.id != product.id and needles.available -%}
+      <span class="bc-cross-sell__plus">+</span>
+      <a href="{{ needles.url }}" class="bc-cross-sell__product">
+        <div class="bc-cross-sell__img-wrap">
+          {%- if needles.featured_image -%}
+            {{ needles.featured_image | image_url: width: 200 | image_tag: loading: 'lazy', alt: needles.title, class: 'bc-cross-sell__img' }}
+          {%- else -%}
+            <img src="{{ 'product-vial-glow.png' | asset_url }}" alt="{{ needles.title }}" class="bc-cross-sell__img" width="200" height="200" loading="lazy">
+          {%- endif -%}
+        </div>
+        <span class="bc-cross-sell__name">{{ needles.title }}</span>
+        <span class="bc-cross-sell__price">{{ needles.price | money }}</span>
+      </a>
+    {%- endif -%}
+  </div>
+
+  <div class="bc-cross-sell__footer">
+    <div class="bc-cross-sell__total">
+      <span class="bc-cross-sell__total-label">Total price:</span>
+      <span class="bc-cross-sell__total-price">{{ cs_total | money }}</span>
+    </div>
+    <button class="bc-btn bc-btn--primary bc-cross-sell__atc" data-cross-sell-atc>
+      Add All to Cart
+    </button>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var btn = document.querySelector('[data-cross-sell-atc]');
+    if (!btn) return;
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var items = [
+        {%- if product.available -%}{ id: {{ product.selected_or_first_available_variant.id }}, quantity: 1 },{%- endif -%}
+        {%- if pair != blank and pair.id != product.id and pair.available -%}{ id: {{ pair.selected_or_first_available_variant.id }}, quantity: 1 },{%- endif -%}
+        {%- if bac_water != blank and bac_water.id != product.id and bac_water.available -%}{ id: {{ bac_water.selected_or_first_available_variant.id }}, quantity: 1 },{%- endif -%}
+        {%- if needles != blank and needles.id != product.id and needles.available -%}{ id: {{ needles.selected_or_first_available_variant.id }}, quantity: 1 },{%- endif -%}
+      ];
+      btn.textContent = 'Adding...';
+      btn.disabled = true;
+      var addNext = function(i) {
+        if (i >= items.length) {
+          btn.textContent = 'Added!';
+          setTimeout(function() {
+            btn.textContent = 'Add All to Cart';
+            btn.disabled = false;
+          }, 1500);
+          var cartEvent = new CustomEvent('cart:updated');
+          document.dispatchEvent(cartEvent);
+          return;
+        }
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: items[i].id, quantity: items[i].quantity })
+        }).then(function() { addNext(i + 1); }).catch(function() { addNext(i + 1); });
+      };
+      addNext(0);
+    });
+  })();
+</script>
+{%- endif -%}
+
+<style>
+  .bc-cross-sell {
+    margin-top: 32px;
+    padding: 24px;
+    background: var(--bg-card, #1E1A2B);
+    border-radius: 16px;
+    border: 1px solid var(--border, rgba(124, 58, 237, 0.15));
+  }
+  .bc-cross-sell__title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #fff;
+    margin: 0 0 20px;
+  }
+  .bc-cross-sell__items {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .bc-cross-sell__product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+    flex: 1;
+    min-width: 80px;
+    max-width: 120px;
+  }
+  .bc-cross-sell__product:hover .bc-cross-sell__img {
+    transform: scale(1.05);
+  }
+  .bc-cross-sell__img-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.03);
+    position: relative;
+    border: 1px solid var(--border, rgba(124, 58, 237, 0.15));
+  }
+  .bc-cross-sell__product--current .bc-cross-sell__img-wrap {
+    border-color: var(--cyan, #7C3AED);
+  }
+  .bc-cross-sell__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 300ms ease;
+  }
+  .bc-cross-sell__check {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 22px;
+    height: 22px;
+    background: var(--cyan, #7C3AED);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .bc-cross-sell__name {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    line-height: 1.3;
+  }
+  .bc-cross-sell__price {
+    font-size: 0.75rem;
+    color: var(--muted, #9CA3AF);
+  }
+  .bc-cross-sell__plus {
+    font-size: 1.25rem;
+    color: var(--muted, #9CA3AF);
+    font-weight: 300;
+    flex-shrink: 0;
+  }
+  .bc-cross-sell__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border, rgba(124, 58, 237, 0.15));
+  }
+  .bc-cross-sell__total {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .bc-cross-sell__total-label {
+    font-size: 0.6875rem;
+    color: var(--muted, #9CA3AF);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .bc-cross-sell__total-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  .bc-cross-sell__atc {
+    white-space: nowrap;
+  }
+
+  @media (max-width: 480px) {
+    .bc-cross-sell__items {
+      gap: 8px;
+    }
+    .bc-cross-sell__img-wrap {
+      width: 64px;
+      height: 64px;
+    }
+    .bc-cross-sell__footer {
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+    }
+  }
+</style>

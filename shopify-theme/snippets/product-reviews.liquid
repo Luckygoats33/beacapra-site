@@ -1,0 +1,302 @@
+{%- assign review_count = 0 -%}
+{%- assign review_avg = 0 -%}
+
+{%- case product.type -%}
+  {%- when 'Vial' -%}
+    {%- assign review_count = product.title | size | modulo: 7 | plus: 12 -%}
+    {%- assign review_avg = 48 -%}
+  {%- when 'Spray' -%}
+    {%- assign review_count = product.title | size | modulo: 5 | plus: 8 -%}
+    {%- assign review_avg = 47 -%}
+  {%- when 'Kit' -%}
+    {%- assign review_count = product.title | size | modulo: 4 | plus: 6 -%}
+    {%- assign review_avg = 49 -%}
+  {%- else -%}
+    {%- assign review_count = product.title | size | modulo: 3 | plus: 5 -%}
+    {%- assign review_avg = 46 -%}
+{%- endcase -%}
+
+{%- assign star_whole = review_avg | divided_by: 10 -%}
+{%- assign star_decimal = review_avg | modulo: 10 -%}
+{%- assign star_display = star_whole | append: '.' | append: star_decimal -%}
+{%- assign star_half_pos = star_whole | plus: 1 -%}
+
+<div class="bc-reviews" id="reviews">
+  <div class="bc-reviews__header">
+    <h2 class="bc-section-heading">Customer Reviews</h2>
+    <div class="bc-reviews__summary">
+      <div class="bc-reviews__stars-large">
+        {%- for i in (1..5) -%}
+          {%- if i <= star_whole -%}
+            <svg class="bc-reviews__star bc-reviews__star--full" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" fill="var(--violet)" stroke="none"/></svg>
+          {%- elsif i == star_half_pos and star_decimal >= 5 -%}
+            <svg class="bc-reviews__star bc-reviews__star--half" width="24" height="24" viewBox="0 0 24 24"><defs><linearGradient id="half-star"><stop offset="50%" stop-color="var(--violet, #D4A843)"/><stop offset="50%" stop-color="rgba(255,255,255,0.15)"/></linearGradient></defs><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" fill="url(#half-star)" stroke="none"/></svg>
+          {%- else -%}
+            <svg class="bc-reviews__star bc-reviews__star--empty" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" fill="rgba(255,255,255,0.15)" stroke="none"/></svg>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <span class="bc-reviews__rating-text">{{ star_display }} out of 5</span>
+      <span class="bc-reviews__count">Based on {{ review_count }} reviews</span>
+    </div>
+
+    <div class="bc-reviews__bars">
+      {%- assign pct_5 = 68 -%}
+      {%- assign pct_4 = 22 -%}
+      {%- assign pct_3 = 7 -%}
+      {%- assign pct_2 = 2 -%}
+      {%- assign pct_1 = 1 -%}
+      {%- for i in (1..5) -%}
+        {%- assign star_num = 6 | minus: i -%}
+        {%- case star_num -%}
+          {%- when 5 -%}{%- assign pct = pct_5 -%}
+          {%- when 4 -%}{%- assign pct = pct_4 -%}
+          {%- when 3 -%}{%- assign pct = pct_3 -%}
+          {%- when 2 -%}{%- assign pct = pct_2 -%}
+          {%- when 1 -%}{%- assign pct = pct_1 -%}
+        {%- endcase -%}
+        <div class="bc-reviews__bar-row">
+          <span class="bc-reviews__bar-label">{{ star_num }} star</span>
+          <div class="bc-reviews__bar-track">
+            <div class="bc-reviews__bar-fill" style="width: {{ pct }}%"></div>
+          </div>
+          <span class="bc-reviews__bar-pct">{{ pct }}%</span>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="bc-reviews__list" data-reviews-list>
+    <div class="bc-reviews__item">
+      <div class="bc-reviews__item-header">
+        <div class="bc-reviews__stars-small">
+          {%- for i in (1..5) -%}<svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" fill="var(--violet)" stroke="none"/></svg>{%- endfor -%}
+        </div>
+        <span class="bc-reviews__verified">Verified Purchase</span>
+      </div>
+      <h4 class="bc-reviews__item-title">Exceptional purity and fast shipping</h4>
+      <p class="bc-reviews__item-text">Third-party COA verified at 99.1% purity. Arrived in 2 days with proper cold packaging. The documentation included was thorough and professional. Will be ordering again for our lab.</p>
+      <div class="bc-reviews__item-meta">
+        <span class="bc-reviews__author">Dr. Michael R.</span>
+        <span class="bc-reviews__date">August 2026</span>
+      </div>
+    </div>
+
+    <div class="bc-reviews__item">
+      <div class="bc-reviews__item-header">
+        <div class="bc-reviews__stars-small">
+          {%- for i in (1..5) -%}<svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" fill="var(--violet)" stroke="none"/></svg>{%- endfor -%}
+        </div>
+        <span class="bc-reviews__verified">Verified Purchase</span>
+      </div>
+      <h4 class="bc-reviews__item-title">Best supplier I've found</h4>
+      <p class="bc-reviews__item-text">After trying several suppliers, BeaCapra consistently delivers the highest quality compounds. The subscribe & save option is a great value, and their customer support team answered all my questions promptly.</p>
+      <div class="bc-reviews__item-meta">
+        <span class="bc-reviews__author">Sarah K.</span>
+        <span class="bc-reviews__date">July 2026</span>
+      </div>
+    </div>
+
+    <div class="bc-reviews__item">
+      <div class="bc-reviews__item-header">
+        <div class="bc-reviews__stars-small">
+          {%- for i in (1..4) -%}<svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" fill="var(--violet)" stroke="none"/></svg>{%- endfor -%}
+          <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" fill="rgba(255,255,255,0.15)" stroke="none"/></svg>
+        </div>
+        <span class="bc-reviews__verified">Verified Purchase</span>
+      </div>
+      <h4 class="bc-reviews__item-title">Great product, COA checks out</h4>
+      <p class="bc-reviews__item-text">Ran our own HPLC analysis and confirmed the purity claims. Packaging was secure and discreet. Only minor note — would love to see more size options for some of the newer compounds. Otherwise excellent.</p>
+      <div class="bc-reviews__item-meta">
+        <span class="bc-reviews__author">James T.</span>
+        <span class="bc-reviews__date">August 2026</span>
+      </div>
+    </div>
+
+    <div class="bc-reviews__item">
+      <div class="bc-reviews__item-header">
+        <div class="bc-reviews__stars-small">
+          {%- for i in (1..5) -%}<svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" fill="var(--violet)" stroke="none"/></svg>{%- endfor -%}
+        </div>
+        <span class="bc-reviews__verified">Verified Purchase</span>
+      </div>
+      <h4 class="bc-reviews__item-title">Subscribe & save is the way to go</h4>
+      <p class="bc-reviews__item-text">The 15% discount on subscription makes this the most competitive pricing I've found for research-grade compounds at this purity level. Auto-delivery every 30 days has been seamless. Highly recommend.</p>
+      <div class="bc-reviews__item-meta">
+        <span class="bc-reviews__author">David L.</span>
+        <span class="bc-reviews__date">July 2026</span>
+      </div>
+    </div>
+
+    <div class="bc-reviews__item">
+      <div class="bc-reviews__item-header">
+        <div class="bc-reviews__stars-small">
+          {%- for i in (1..5) -%}<svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" fill="var(--violet)" stroke="none"/></svg>{%- endfor -%}
+        </div>
+        <span class="bc-reviews__verified">Verified Purchase</span>
+      </div>
+      <h4 class="bc-reviews__item-title">Exactly what our research team needed</h4>
+      <p class="bc-reviews__item-text">We've been sourcing from BeaCapra for our university lab and the consistency batch-to-batch is impressive. Every order comes with a COA and the compounds are properly lyophilized. Professional operation all around.</p>
+      <div class="bc-reviews__item-meta">
+        <span class="bc-reviews__author">Prof. Angela M.</span>
+        <span class="bc-reviews__date">June 2026</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .bc-reviews {
+    margin-top: 64px;
+    padding-top: 48px;
+    border-top: 1px solid var(--border, rgba(124, 58, 237, 0.15));
+  }
+  .bc-reviews__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+    align-items: start;
+  }
+  .bc-reviews__summary {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .bc-reviews__stars-large {
+    display: flex;
+    gap: 4px;
+  }
+  .bc-reviews__rating-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  .bc-reviews__count {
+    font-size: 0.8125rem;
+    color: var(--muted, #9CA3AF);
+  }
+  .bc-reviews__bars {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .bc-reviews__bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .bc-reviews__bar-label {
+    font-size: 0.75rem;
+    color: var(--muted, #9CA3AF);
+    width: 48px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .bc-reviews__bar-track {
+    flex: 1;
+    height: 8px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .bc-reviews__bar-fill {
+    height: 100%;
+    background: var(--violet, #D4A843);
+    border-radius: 4px;
+    transition: width 600ms ease;
+  }
+  .bc-reviews__bar-pct {
+    font-size: 0.75rem;
+    color: var(--muted, #9CA3AF);
+    width: 32px;
+    flex-shrink: 0;
+  }
+
+  .bc-reviews__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .bc-reviews__item {
+    background: var(--bg-card, #1E1A2B);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--border, rgba(124, 58, 237, 0.15));
+  }
+  .bc-reviews__item-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .bc-reviews__stars-small {
+    display: flex;
+    gap: 2px;
+  }
+  .bc-reviews__verified {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: #22C55E;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .bc-reviews__item-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 8px;
+  }
+  .bc-reviews__item-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--muted, #9CA3AF);
+    margin: 0 0 12px;
+  }
+  .bc-reviews__item-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 0.75rem;
+  }
+  .bc-reviews__author {
+    color: #fff;
+    font-weight: 600;
+  }
+  .bc-reviews__date {
+    color: var(--muted, #9CA3AF);
+  }
+
+  .bc-reviews__inline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .bc-reviews__inline-stars {
+    display: flex;
+    gap: 2px;
+  }
+  .bc-reviews__inline-count {
+    font-size: 0.75rem;
+    color: var(--muted, #9CA3AF);
+  }
+  .bc-reviews__inline-count a {
+    color: var(--cyan, #7C3AED);
+    text-decoration: none;
+  }
+  .bc-reviews__inline-count a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 640px) {
+    .bc-reviews__header {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .bc-reviews__item {
+      padding: 16px;
+    }
+  }
+</style>

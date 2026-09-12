@@ -1,0 +1,122 @@
+<section class="bc-featured" id="formulas" data-section-reveal>
+  <div class="bc-container">
+    <div class="bc-section-header">
+      <h2 class="bc-section-heading">{{ section.settings.heading | default: 'Featured formulas' }}</h2>
+      <p class="bc-section-sub">{{ section.settings.subheading | default: 'Precision-grade research compounds, independently tested and verified.' }}</p>
+    </div>
+
+    {%- assign has_product_blocks = false -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'product' and block.settings.product != blank -%}
+        {%- assign has_product_blocks = true -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if has_product_blocks -%}
+      <div class="bc-product-grid">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'product' and block.settings.product != blank -%}
+            {% render 'product-card', product: block.settings.product %}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      <div class="bc-featured__cta">
+        <a href="/collections/all" class="bc-btn bc-btn--ghost">
+          {{ 'collections.all' | t | default: 'View all' }} &rarr;
+        </a>
+      </div>
+    {%- else -%}
+      {%- assign collection = collections[section.settings.collection] -%}
+      {%- if collection != blank -%}
+        <div class="bc-product-grid">
+          {%- for product in collection.products limit: section.settings.limit -%}
+            {% render 'product-card', product: product %}
+          {%- endfor -%}
+        </div>
+
+        <div class="bc-featured__cta">
+          <a href="{{ collection.url }}" class="bc-btn bc-btn--ghost">
+            {{ 'collections.all' | t }} &rarr;
+          </a>
+        </div>
+      {%- else -%}
+        <div class="bc-product-grid">
+          {%- for i in (1..8) -%}
+            <div class="bc-product-card bc-product-card--placeholder" data-section-reveal>
+              <div class="bc-product-card__image">
+                {{ 'product-1' | placeholder_svg_tag: 'bc-placeholder-svg' }}
+                <div class="bc-product-card__orbital"></div>
+              </div>
+              <div class="bc-product-card__body">
+                <h3 class="bc-product-card__title">Formula {{ i }}</h3>
+                <p class="bc-product-card__category">Research compound</p>
+                <div class="bc-product-card__pricing">
+                  <span class="bc-product-card__price">$74.99</span>
+                  <span class="bc-product-card__subscribe-price">$63.74 subscribe</span>
+                </div>
+                <button class="bc-btn bc-btn--small bc-btn--ghost">{{ 'general.explore_formula' | t }}</button>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.featured_products.name",
+  "tag": "div",
+  "class": "bc-featured-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured formulas"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Precision-grade research compounds, independently tested and verified."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Fallback collection",
+      "info": "Used only if no individual products are selected below."
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Product limit (fallback)",
+      "min": 4,
+      "max": 24,
+      "step": 4,
+      "default": 8
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.featured_products.name"
+    }
+  ]
+}
+{% endschema %}
