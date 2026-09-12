@@ -1,0 +1,386 @@
+<div class="bc-chat" id="bc-chat">
+  <button class="bc-chat__fab" id="bc-chat-fab" aria-label="Chat with us">
+    <svg class="bc-chat__fab-icon bc-chat__fab-icon--chat" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <svg class="bc-chat__fab-icon bc-chat__fab-icon--close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+  </button>
+
+  <div class="bc-chat__window" id="bc-chat-window">
+    <div class="bc-chat__header">
+      <div class="bc-chat__header-info">
+        <div class="bc-chat__avatar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a8 8 0 0 0-8 8c0 3.5 2.1 6.5 5 7.7V20a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2.3c2.9-1.2 5-4.2 5-7.7a8 8 0 0 0-8-8z"/></svg>
+        </div>
+        <div>
+          <div class="bc-chat__header-title">BeaCapra Research</div>
+          <div class="bc-chat__header-status">Peptide Research Assistant</div>
+        </div>
+      </div>
+      <button class="bc-chat__close" id="bc-chat-close" aria-label="Close chat">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="bc-chat__messages" id="bc-chat-messages"></div>
+
+    <div class="bc-chat__quick" id="bc-chat-quick">
+      <button class="bc-chat__quick-btn" data-q="reconstitution">How to reconstitute?</button>
+      <button class="bc-chat__quick-btn" data-q="storage">Storage guidelines</button>
+      <button class="bc-chat__quick-btn" data-q="purity">Purity & COA</button>
+      <button class="bc-chat__quick-btn" data-q="shipping">Shipping info</button>
+      <button class="bc-chat__quick-btn" data-q="forms">Vials vs sprays</button>
+      <button class="bc-chat__quick-btn" data-q="subscribe">Subscribe & Save</button>
+    </div>
+
+    <div class="bc-chat__input-wrap">
+      <input type="text" class="bc-chat__input" id="bc-chat-input" placeholder="Ask about peptides..." autocomplete="off">
+      <button class="bc-chat__send" id="bc-chat-send" aria-label="Send">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .bc-chat { position: fixed; bottom: 24px; right: 24px; z-index: 100; font-family: 'Inter', sans-serif; }
+
+  .bc-chat__fab {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--cyan, #7C3AED); border: none; color: #fff;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(124,58,237,0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+  }
+  .bc-chat__fab:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(124,58,237,0.5); }
+  .bc-chat__fab-icon--close { display: none; }
+  .bc-chat.is-open .bc-chat__fab-icon--chat { display: none; }
+  .bc-chat.is-open .bc-chat__fab-icon--close { display: block; }
+
+  .bc-chat__window {
+    position: absolute; bottom: 72px; right: 0;
+    width: 380px; max-height: 520px; height: 520px;
+    background: var(--bg, #0D0B14);
+    border: 1px solid var(--border, rgba(124,58,237,0.2));
+    border-radius: 16px;
+    display: flex; flex-direction: column;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.5);
+    opacity: 0; transform: translateY(16px) scale(0.95);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .bc-chat.is-open .bc-chat__window {
+    opacity: 1; transform: translateY(0) scale(1); pointer-events: auto;
+  }
+
+  .bc-chat__header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 16px 12px;
+    border-bottom: 1px solid var(--border, rgba(124,58,237,0.15));
+    flex-shrink: 0;
+  }
+  .bc-chat__header-info { display: flex; align-items: center; gap: 10px; }
+  .bc-chat__avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(124,58,237,0.15); display: flex;
+    align-items: center; justify-content: center;
+    color: var(--cyan, #7C3AED);
+  }
+  .bc-chat__header-title {
+    font-size: 0.875rem; font-weight: 700;
+    color: var(--white, #FFFFFF);
+  }
+  .bc-chat__header-status {
+    font-size: 0.7rem; color: var(--muted, #9CA3AF); margin-top: 1px;
+  }
+  .bc-chat__close {
+    background: none; border: none; color: var(--muted, #9CA3AF);
+    cursor: pointer; padding: 4px; border-radius: 6px;
+    transition: color 0.2s ease;
+  }
+  .bc-chat__close:hover { color: var(--white, #FFFFFF); }
+
+  .bc-chat__messages {
+    flex: 1; overflow-y: auto; padding: 16px;
+    display: flex; flex-direction: column; gap: 12px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(124,58,237,0.2) transparent;
+  }
+
+  .bc-chat__bubble {
+    max-width: 85%; padding: 10px 14px;
+    border-radius: 14px; font-size: 0.8125rem;
+    line-height: 1.5; word-wrap: break-word;
+    animation: bc-chat-fade 0.25s ease;
+  }
+  .bc-chat__bubble--bot {
+    align-self: flex-start;
+    background: var(--bg-card, #1E1A2B);
+    color: var(--white, #FFFFFF);
+    border-bottom-left-radius: 4px;
+  }
+  .bc-chat__bubble--user {
+    align-self: flex-end;
+    background: var(--cyan, #7C3AED);
+    color: #fff;
+    border-bottom-right-radius: 4px;
+  }
+  .bc-chat__bubble a {
+    color: var(--cyan, #7C3AED); text-decoration: underline;
+  }
+  .bc-chat__bubble--user a { color: #fff; }
+
+  @keyframes bc-chat-fade {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .bc-chat__typing {
+    align-self: flex-start; padding: 10px 18px;
+    background: var(--bg-card, #1E1A2B);
+    border-radius: 14px; border-bottom-left-radius: 4px;
+    display: flex; gap: 4px; align-items: center;
+  }
+  .bc-chat__typing span {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--muted, #9CA3AF);
+    animation: bc-typing 1.2s infinite;
+  }
+  .bc-chat__typing span:nth-child(2) { animation-delay: 0.2s; }
+  .bc-chat__typing span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes bc-typing {
+    0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+    30% { opacity: 1; transform: translateY(-3px); }
+  }
+
+  .bc-chat__quick {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    padding: 0 16px 12px; flex-shrink: 0;
+  }
+  .bc-chat__quick-btn {
+    background: rgba(124,58,237,0.1);
+    border: 1px solid rgba(124,58,237,0.2);
+    color: var(--cyan, #7C3AED);
+    font-size: 0.7rem; padding: 5px 10px;
+    border-radius: 20px; cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    white-space: nowrap;
+  }
+  .bc-chat__quick-btn:hover {
+    background: rgba(124,58,237,0.2);
+    border-color: rgba(124,58,237,0.4);
+  }
+
+  .bc-chat__input-wrap {
+    display: flex; align-items: center; gap: 8px;
+    padding: 12px 16px;
+    border-top: 1px solid var(--border, rgba(124,58,237,0.15));
+    flex-shrink: 0;
+  }
+  .bc-chat__input {
+    flex: 1; background: var(--bg-card, #1E1A2B);
+    border: 1px solid var(--border, rgba(124,58,237,0.15));
+    border-radius: 10px; padding: 10px 14px;
+    color: var(--white, #FFFFFF); font-size: 0.8125rem;
+    font-family: 'Inter', sans-serif; outline: none;
+    transition: border-color 0.2s ease;
+  }
+  .bc-chat__input::placeholder { color: var(--muted, #9CA3AF); }
+  .bc-chat__input:focus { border-color: var(--cyan, #7C3AED); }
+  .bc-chat__send {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: var(--cyan, #7C3AED); border: none; color: #fff;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.2s ease;
+    flex-shrink: 0;
+  }
+  .bc-chat__send:hover { opacity: 0.85; }
+
+  @media (max-width: 480px) {
+    .bc-chat__window {
+      width: calc(100vw - 32px); right: -8px;
+      max-height: calc(100vh - 120px); height: calc(100vh - 120px);
+    }
+  }
+
+  body.bc-chat-open .bc-back-to-top { bottom: 92px; }
+</style>
+
+<script>
+(function() {
+  var FAQ = {
+    reconstitution: {
+      keywords: ['reconstitut', 'mix', 'bac water', 'bacteriostatic', 'dilut', 'how to prepare', 'prepare'],
+      answer: 'To reconstitute a lyophilized peptide vial:\n\n1. Clean the vial stopper and BAC water vial with alcohol swabs\n2. Draw bacteriostatic water into a syringe\n3. Inject slowly down the side of the peptide vial (never directly onto the powder)\n4. Gently swirl — do not shake\n5. Allow to dissolve fully (1–2 minutes)\n\nUse our <a href="/pages/find-your-compound">Reconstitution Calculator</a> for exact dosing. Standard dilution is 1–2 mL of BAC water per vial.'
+    },
+    storage: {
+      keywords: ['stor', 'refrigerat', 'freeze', 'shelf life', 'expir', 'temperature', 'keep', 'how long'],
+      answer: 'Peptide storage guidelines:\n\n• <strong>Unreconstituted (lyophilized):</strong> Store at room temperature or refrigerated (2–8°C). Stable for 24+ months.\n• <strong>Reconstituted:</strong> Refrigerate at 2–8°C. Use within 4–6 weeks.\n• <strong>Nasal sprays:</strong> Store upright, refrigerated after opening.\n\nAvoid direct sunlight and repeated freeze/thaw cycles. All products ship with appropriate packaging to maintain integrity.'
+    },
+    purity: {
+      keywords: ['purity', 'coa', 'certificate', 'analysis', 'test', 'hplc', 'mass spec', 'quality', 'third party', '3rd party', 'lab test'],
+      answer: 'All BeaCapra peptides are ≥99% purity, verified by independent third-party HPLC and mass spectrometry analysis.\n\nEvery product includes a <strong>Certificate of Analysis (COA)</strong> available on the product page. Our COAs show:\n• HPLC purity percentage\n• Mass spectrometry confirmation\n• Amino acid sequence verification\n\nWe source exclusively from GMP-compliant facilities. <a href="/pages/find-your-compound">View our transparency page</a> for more details.'
+    },
+    shipping: {
+      keywords: ['ship', 'deliver', 'track', 'order', 'how long to get', 'arrival', 'dispatch'],
+      answer: 'Shipping information:\n\n• <strong>Processing:</strong> Orders ship within 1–2 business days\n• <strong>Standard shipping:</strong> 3–5 business days (US)\n• <strong>Tracking:</strong> Provided via email once shipped\n• <strong>Packaging:</strong> Discreet, temperature-appropriate packaging\n\nAll orders include proper handling materials. Contact us at our support email for specific shipping questions.'
+    },
+    forms: {
+      keywords: ['vial', 'spray', 'nasal', 'form', 'difference', 'which one', 'type', 'lyophil'],
+      answer: 'BeaCapra offers peptides in multiple research formats:\n\n• <strong>Lyophilized Vials:</strong> Freeze-dried powder requiring reconstitution. Most versatile for research. <a href="/collections/vials">Browse vials</a>\n• <strong>Nasal Sprays:</strong> Pre-mixed, ready-to-use format. Convenient for certain research protocols. <a href="/collections/sprays">Browse sprays</a>\n• <strong>Kits & Blends:</strong> Curated combinations of complementary peptides. <a href="/collections/kits">Browse kits</a>\n• <strong>Accessories:</strong> BAC water, syringes, and supplies. <a href="/collections/accessories">Browse accessories</a>'
+    },
+    subscribe: {
+      keywords: ['subscri', 'save', 'discount', 'recurring', 'auto', 'monthly'],
+      answer: 'Yes! Our <strong>Subscribe & Save</strong> program offers:\n\n• Up to <strong>15% off</strong> every recurring order\n• Flexible delivery schedules (every 30, 60, or 90 days)\n• Cancel or modify anytime\n• Free shipping on subscription orders\n\nLook for the "Subscribe & Save" option on any product page to get started.'
+    },
+    bpc157: {
+      keywords: ['bpc-157', 'bpc 157', 'bpc157', 'body protection'],
+      answer: 'BPC-157 (Body Protection Compound-157) is one of our most popular research peptides.\n\n• <strong>Category:</strong> Recovery & Repair\n• <strong>Available as:</strong> Vials and nasal sprays\n• <strong>Research areas:</strong> Tissue repair, gut health, musculoskeletal recovery\n\nOften studied alongside TB-500 for synergistic recovery research. <a href="/products/bpc-157">View BPC-157</a> | <a href="/collections/recovery">Browse Recovery peptides</a>'
+    },
+    tb500: {
+      keywords: ['tb-500', 'tb 500', 'tb500', 'thymosin beta'],
+      answer: 'TB-500 (Thymosin Beta-4 fragment) is a key recovery peptide.\n\n• <strong>Category:</strong> Recovery & Repair\n• <strong>Available as:</strong> Vials and nasal sprays\n• <strong>Research areas:</strong> Tissue regeneration, flexibility, cardiovascular health\n\nFrequently paired with BPC-157 in research protocols. <a href="/collections/recovery">Browse Recovery peptides</a>'
+    },
+    semaglutide: {
+      keywords: ['semaglut', 'glp-1', 'glp1', 'weight', 'metabolic', 'ozempic', 'wegovy', 'tirzepatide', 'mounjaro'],
+      answer: 'Our metabolic research peptides include:\n\n• <strong>Semaglutide:</strong> GLP-1 receptor agonist researched for metabolic regulation\n• <strong>Tirzepatide:</strong> Dual GIP/GLP-1 receptor agonist\n\nBoth available in research-grade vial format. <a href="/collections/metabolic">Browse Metabolic peptides</a>\n\n<em>Note: All products are for research use only (RUO). Not for human consumption.</em>'
+    },
+    cognitive: {
+      keywords: ['cognitiv', 'brain', 'nootropic', 'semax', 'selank', 'memory', 'focus', 'mental'],
+      answer: 'Our cognitive research peptides include:\n\n• <strong>Semax:</strong> Neuropeptide researched for cognitive enhancement and neuroprotection\n• <strong>Selank:</strong> Studied for anxiolytic and cognitive-enhancing properties\n• <strong>Dihexa:</strong> Investigated for memory and neuroplasticity\n\nAvailable in vial and nasal spray formats. <a href="/collections/cognitive">Browse Cognitive peptides</a>'
+    },
+    longevity: {
+      keywords: ['longevit', 'aging', 'anti-aging', 'epithalon', 'nad', 'telomer', 'epitalon'],
+      answer: 'Our longevity research peptides include:\n\n• <strong>Epithalon:</strong> Studied for telomerase activation and cellular aging\n• <strong>NAD+:</strong> Researched for cellular energy and DNA repair\n• <strong>GHK-Cu:</strong> Copper peptide studied for cellular regeneration\n\n<a href="/collections/longevity">Browse Longevity peptides</a>'
+    },
+    sleep: {
+      keywords: ['sleep', 'circadian', 'insomnia', 'dsip', 'rest'],
+      answer: 'Our sleep & circadian research peptides are formulated for studying sleep regulation and circadian rhythm research.\n\n<a href="/collections/sleep">Browse Sleep & Circadian peptides</a>'
+    },
+    growth: {
+      keywords: ['growth', 'hgh', 'igf', 'ipamorelin', 'cjc', 'ghrp', 'sermorelin', 'mk-677', 'mk677'],
+      answer: 'Our growth factor research peptides include:\n\n• <strong>CJC-1295:</strong> GHRH analog for growth hormone research\n• <strong>Ipamorelin:</strong> Selective GH secretagogue\n• <strong>Sermorelin:</strong> Growth hormone-releasing hormone analog\n\nOften studied in combination protocols. <a href="/collections/growth-factors">Browse Growth Factor peptides</a>'
+    },
+    skin: {
+      keywords: ['skin', 'cosmetic', 'ghk', 'copper', 'collagen', 'wrinkle', 'hair'],
+      answer: 'Our skin & cosmetic research peptides include:\n\n• <strong>GHK-Cu:</strong> Copper peptide researched for skin remodeling and wound healing\n• <strong>AHK-Cu:</strong> Studied for hair follicle stimulation\n\nThese peptides are among the most researched in dermatological science. <a href="/collections/skin-cosmetic">Browse Skin & Cosmetic peptides</a>'
+    },
+    ruo: {
+      keywords: ['human', 'consumption', 'legal', 'fda', 'safe', 'approved', 'ruo', 'research use', 'inject'],
+      answer: '<strong>Important:</strong> All BeaCapra products are sold strictly for <strong>Research Use Only (RUO)</strong>.\n\nThey are not intended for human or animal consumption, and are not FDA-approved drugs or supplements. By purchasing, you agree to use products solely for legitimate research purposes.\n\nFor questions about applicable research regulations, consult your institutional review board or compliance office.'
+    },
+    wholesale: {
+      keywords: ['wholesale', 'bulk', 'lab', 'institution', 'large order', 'volume'],
+      answer: 'We offer wholesale and institutional pricing for qualified research organizations.\n\nFor bulk or wholesale inquiries, please contact us directly through our website. Volume discounts are available for established research accounts.'
+    },
+    returns: {
+      keywords: ['return', 'refund', 'exchange', 'cancel', 'money back', 'policy'],
+      answer: 'Our return policy:\n\n• Unopened products may be returned within 30 days\n• Products must be in original, sealed packaging\n• Refunds processed within 5–7 business days\n• Contact support to initiate a return\n\nDue to the nature of research compounds, opened or reconstituted products cannot be returned.'
+    },
+    help: {
+      keywords: ['help', 'support', 'contact', 'email', 'phone', 'reach'],
+      answer: 'Need more help? Here are some options:\n\n• <a href="/pages/find-your-compound">Find Your Compound</a> — interactive tool to find the right peptide\n• <a href="/blogs/news">Latest Research</a> — articles and guides\n• <a href="/pages/faq">FAQ Page</a> — comprehensive answers\n\nYou can also try asking me a specific question about any peptide, research goal, or product format!'
+    },
+    goals: {
+      keywords: ['goal', 'which peptide', 'recommend', 'what should', 'best for', 'suggest', 'category', 'categories'],
+      answer: 'We organize peptides by research goal to help you find the right compound:\n\n• <a href="/collections/metabolic">Metabolic</a> — Semaglutide, Tirzepatide\n• <a href="/collections/recovery">Recovery & Repair</a> — BPC-157, TB-500\n• <a href="/collections/growth-factors">Growth Factors</a> — CJC-1295, Ipamorelin\n• <a href="/collections/cognitive">Cognitive</a> — Semax, Selank\n• <a href="/collections/longevity">Longevity</a> — Epithalon, NAD+\n• <a href="/collections/skin-cosmetic">Skin & Cosmetic</a> — GHK-Cu\n• <a href="/collections/sleep">Sleep & Circadian</a>\n• <a href="/collections/immune">Immune Support</a>\n• <a href="/collections/vascular">Vascular</a>\n• <a href="/collections/melanocortin">Melanocortin</a>\n\nOr browse <a href="/collections/all">all products</a>.'
+    }
+  };
+
+  var GREETING = 'Hey! 👋 I’m the BeaCapra Research Assistant. Ask me anything about our peptides — reconstitution, storage, product forms, or help finding the right compound for your research.';
+  var FALLBACK = 'I’m not sure about that one. Here are some things I can help with:\n\n• Reconstitution & preparation\n• Storage guidelines\n• Purity & Certificates of Analysis\n• Product forms (vials, sprays, kits)\n• Finding peptides by research goal\n• Shipping & returns\n\nOr try the quick-reply buttons below! For anything else, visit our <a href="/pages/faq">FAQ page</a>.';
+
+  var chat = document.getElementById('bc-chat');
+  var fab = document.getElementById('bc-chat-fab');
+  var closeBtn = document.getElementById('bc-chat-close');
+  var messages = document.getElementById('bc-chat-messages');
+  var input = document.getElementById('bc-chat-input');
+  var sendBtn = document.getElementById('bc-chat-send');
+  var quickWrap = document.getElementById('bc-chat-quick');
+  var hasGreeted = false;
+
+  function toggle() {
+    chat.classList.toggle('is-open');
+    document.body.classList.toggle('bc-chat-open', chat.classList.contains('is-open'));
+    if (chat.classList.contains('is-open') && !hasGreeted) {
+      hasGreeted = true;
+      addBotMessage(GREETING);
+    }
+    if (chat.classList.contains('is-open')) {
+      setTimeout(function() { input.focus(); }, 300);
+    }
+  }
+
+  fab.addEventListener('click', toggle);
+  closeBtn.addEventListener('click', toggle);
+
+  function addBotMessage(html) {
+    var typing = document.createElement('div');
+    typing.className = 'bc-chat__typing';
+    typing.innerHTML = '<span></span><span></span><span></span>';
+    messages.appendChild(typing);
+    messages.scrollTop = messages.scrollHeight;
+
+    setTimeout(function() {
+      typing.remove();
+      var div = document.createElement('div');
+      div.className = 'bc-chat__bubble bc-chat__bubble--bot';
+      div.innerHTML = html.replace(/\n/g, '<br>');
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+    }, 600 + Math.random() * 400);
+  }
+
+  function addUserMessage(text) {
+    var div = document.createElement('div');
+    div.className = 'bc-chat__bubble bc-chat__bubble--user';
+    div.textContent = text;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function findAnswer(text) {
+    var lower = text.toLowerCase();
+    var bestMatch = null;
+    var bestScore = 0;
+
+    for (var key in FAQ) {
+      var entry = FAQ[key];
+      var score = 0;
+      for (var i = 0; i < entry.keywords.length; i++) {
+        if (lower.indexOf(entry.keywords[i]) !== -1) {
+          score += entry.keywords[i].length;
+        }
+      }
+      if (score > bestScore) {
+        bestScore = score;
+        bestMatch = entry;
+      }
+    }
+    return bestMatch ? bestMatch.answer : FALLBACK;
+  }
+
+  function send() {
+    var text = input.value.trim();
+    if (!text) return;
+    addUserMessage(text);
+    input.value = '';
+    quickWrap.hidden = true;
+    addBotMessage(findAnswer(text));
+  }
+
+  sendBtn.addEventListener('click', send);
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { e.preventDefault(); send(); }
+  });
+
+  quickWrap.addEventListener('click', function(e) {
+    var btn = e.target.closest('[data-q]');
+    if (!btn) return;
+    var key = btn.getAttribute('data-q');
+    addUserMessage(btn.textContent);
+    quickWrap.hidden = true;
+    if (FAQ[key]) addBotMessage(FAQ[key].answer);
+  });
+})();
+</script>
